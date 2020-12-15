@@ -37,7 +37,10 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     // Preattentive symbols.
     let symbolPlus = {
         draw: function( g, size ) {
-            let s = Math.round( Math.sqrt( size / Math.PI ) + 1 );
+            let s = Math.round( Math.sqrt( size / Math.PI ));
+            if( s > 1 ) {
+                s++;
+            };
             g.moveTo( -s,  0 );
             g.lineTo(  s,  0 );
             g.moveTo(  0,  s );
@@ -57,10 +60,9 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     },
     symbolAsterisk = {
         draw: function( g, size ) {
-            let s = Math.sqrt( size / Math.PI ),
+            let s = Math.round( Math.sqrt( size / Math.PI )),
                 t = Math.round( s * Math.sin( Math.PI / 6 )),
                 u = Math.round( s * Math.cos( Math.PI / 6 ));
-            s = Math.round( s );
             g.moveTo(  0,  s );
             g.lineTo(  0, -s );
             g.moveTo( -u, -t );
@@ -70,14 +72,16 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
             g.closePath();
         }
     };
-    let symbols = ( symbolSet === "geometric" ) ? d3.symbols : [ d3.symbolCircle, symbolPlus, symbolX, d3.symbolTriangle, symbolAsterisk, d3.symbolSquare ];
+    let symbols = ( symbolSet === "geometric" )
+        ? d3.symbols.slice( 0, 6 )
+        : [ d3.symbolCircle, symbolPlus, symbolX, d3.symbolTriangle, symbolAsterisk, d3.symbolSquare ];
     let symbol = d3.scaleOrdinal( data.map( datum => datum[ 0 ]), symbols.map( s => d3.symbol().type( s ).size( size )()));
     
     svg.selectAll( "*" ).remove();
     data.forEach(( datum ) => {
         svg.append( "path" )
         .attr( "d", symbol( datum[ 0 ]))
-        .attr( "transform", d => `translate( ${ Math.round( xScale( datum[ 2 ]) + 0.5 )}, ${ Math.round( yScale( datum[ 1 ]) + 0.5 )})` )
+        .attr( "transform", d => `translate( ${ Math.round( xScale( datum[ 2 ]))}, ${ Math.round( yScale( datum[ 1 ]))})` )
         .attr( "r", size / 2 )
         .style( "fill", "none" )
         .style( "stroke", "black" );
