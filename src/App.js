@@ -8,7 +8,6 @@ const App = () => {
     
     // Create state.
     const [ dataSet, setDataSet ] = useState( "Iris" );
-    const [ data, setData ] = useState( App.getData( dataSet ));
     
     // Return the App.
     return (
@@ -16,16 +15,13 @@ const App = () => {
             <div className="GridPlots">
                 <label>Geometric Symbols</label>
                 <label>Preattentive Symbols</label>
-                <Plot shapes={"geometric"}    data={data} />
-                <Plot shapes={"preattentive"} data={data} />
+                <Plot shapes={"geometric"}    dataSet={dataSet} />
+                <Plot shapes={"preattentive"} dataSet={dataSet} />
             </div>
             <div className="GridControls">
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 120}}
-                    onChange={( event ) => {
-                        setDataSet( event.target.value );
-                        setData( App.getData( event.target.value ))
-                    }}>
+                    onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
                     <MenuItem value="Diamonds">Diamonds</MenuItem>
@@ -36,21 +32,6 @@ const App = () => {
             </p>
         </div>
     );
-}
-
-// Returns Array of Arrays of X, Y, and category.
-App.getData = ( newDataSet ) => {
-    
-    console.log( "$$$$$ " + newDataSet );
-    
-    let data = [];
-    switch( newDataSet ) {
-        case "Business": data = [[ 3, 3, 0 ], [ 1, 1, 1 ], [ 4, 4, 2 ]]; break;
-        case "Diamonds": data = [[ 1, 1, 0 ], [ 5, 5, 1 ], [ 9, 9, 2 ]]; break;
-        default: data = [[ 0, 0, 0 ], [ 1, 1, 1 ], [ 2, 2, 2 ], [ 3, 3, 3 ], [ 4, 4, 4 ], [ 5, 5, 5 ], [6, 6, 6 ]]; break;
-    }
-    
-    return data;
 }
 
 export default App;
