@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select, MenuItem } from '@material-ui/core';
+import { Slider, Select, MenuItem } from '@material-ui/core';
 import Plot from './Plot';
 import './App.css';
 
@@ -8,6 +8,7 @@ const App = () => {
     
     // Create state.
     const [ dataSet, setDataSet ] = useState( "Iris" );
+    const [ size, setSize ] = useState( 5 );
     
     // Return the App.
     return (
@@ -15,10 +16,14 @@ const App = () => {
             <div className="GridPlots">
                 <label>Geometric Symbols</label>
                 <label>Preattentive Symbols</label>
-                <Plot shapes={"geometric"}    dataSet={dataSet} />
-                <Plot shapes={"preattentive"} dataSet={dataSet} />
+                <Plot symbolSet={"geometric"}    dataSet={dataSet} size={size} />
+                <Plot symbolSet={"preattentive"} dataSet={dataSet} size={size} />
             </div>
             <div className="GridControls">
+                <label>Size:</label>
+                <Slider defaultValue={ 5 } step={ 1 } min={ 0 } max={ 10 }
+                    valueLabelDisplay="auto" marks
+                    onChangeCommitted={( event, value ) => setSize( value )} />
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 120}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
