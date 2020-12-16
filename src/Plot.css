@@ -2,3 +2,9 @@
 svg {
     border: 1px solid black;
 }
+
+/* Axis */
+.axis path,
+.axis line {
+    stroke: #a0a0a0;
+}
