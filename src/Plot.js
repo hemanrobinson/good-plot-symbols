@@ -45,7 +45,7 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     symbolPlus = {
         draw: function( g, size ) {
             let s = Math.sqrt( size / Math.PI );
-            s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 2 ) - 0.5;
+            s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 2 );
             g.moveTo( -s,  0 );
             g.lineTo(  s,  0 );
             g.moveTo(  0, -s );
@@ -56,7 +56,7 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     symbolX = {
         draw: function( g, size ) {
             let s = Math.sqrt( size / Math.PI );
-            s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / ( 2 * Math.SQRT2 )) - 0.5;
+            s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / ( 2 * Math.SQRT2 ));
             g.moveTo( -s, -s );
             g.lineTo(  s,  s );
             g.closePath();
@@ -69,8 +69,8 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
         draw: function( g, size ) {
             let s = Math.sqrt( size / Math.PI );
             s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 3 ) + 0.5;
-            let t = Math.round( s * Math.sin( Math.PI / 6 )) + 0.5,
-                u = Math.round( s * Math.cos( Math.PI / 6 )) + 0.5;
+            let t = Math.round( s * Math.sin( Math.PI / 6 )),
+                u = Math.round( s * Math.cos( Math.PI / 6 ));
             g.moveTo(  0, -s );
             g.lineTo(  u,  t );
             g.lineTo( -u,  t );
@@ -81,8 +81,8 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
         draw: function( g, size ) {
             let s = Math.sqrt( size / Math.PI );
             s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 3 ) + 0.5;
-            let t = Math.round( s * Math.sin( Math.PI / 6 )) + 0.5,
-                u = Math.round( s * Math.cos( Math.PI / 6 )) + 0.5;
+            let t = Math.round( s * Math.sin( Math.PI / 6 )),
+                u = Math.round( s * Math.cos( Math.PI / 6 ));
             g.moveTo(  0,  s );
             g.lineTo(  0, -s );
             g.closePath();
@@ -97,7 +97,7 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     symbolSquare = {
         draw: function( g, size ) {
             let s = Math.sqrt( size / Math.PI );
-            s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 4 ) + 0.5;
+            s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 4 ) - 0.5;
             g.moveTo(  s,  s );
             g.lineTo(  s, -s );
             g.lineTo( -s, -s );
@@ -119,7 +119,8 @@ Plot.draw = ( height, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     data.forEach(( datum ) => {
         svg.append( "path" )
         .attr( "d", symbol( datum[ 0 ]))
-        .attr( "transform", d => `translate( ${ Math.round( xScale( datum[ 2 ]) + 0.5 )}, ${ Math.round( yScale( datum[ 1 ]) + 0.5 )})` )
+//        .attr( "transform", d => `translate( ${ Math.round( xScale( datum[ 2 ]) + 0.5 )}, ${ Math.round( yScale( datum[ 1 ]) + 0.5 )})` )
+        .attr( "transform", d => `translate( ${ Math.round( xScale( datum[ 2 ]))}, ${ Math.round( yScale( datum[ 1 ]))})` )
         .style( "fill", "none" )
         .style( "stroke", "black" );
     });

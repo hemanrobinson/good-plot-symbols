@@ -29,7 +29,7 @@ const App = () => {
                     onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
-                    <MenuItem value="Diamonds">Diamonds</MenuItem>
+                    <MenuItem value="Rice">Rice</MenuItem>
                 </Select>
             </div>
             <p>
