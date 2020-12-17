@@ -3,6 +3,10 @@ div {
     text-align: center;
     gap: 10px;
 }
+.Description {
+    text-align: left;
+    margin: 0 200px;
+}
 .Column {
     display: flex;
     flex-direction: column;

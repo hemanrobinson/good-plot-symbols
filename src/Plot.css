@@ -1,6 +1,7 @@
 /* SVG element. */
 svg {
     border: 1px solid black;
+    font-size: 10px;
 }
 
 /* Axis */
