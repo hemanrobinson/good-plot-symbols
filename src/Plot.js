@@ -8,7 +8,7 @@ import './Plot.css';
 const Plot = ( props ) => {
     
     // Create reference and scales.
-    const width = 400, height = 400, padding = 10, margin = 40;
+    const padding = 10, marginAxis = 40, marginLegend = 150, height = 400, width = 400;
     let ref = useRef(),
         { symbolSet, dataSet, size } = props,
         data = Data.getValues( dataSet ),
@@ -16,20 +16,20 @@ const Plot = ( props ) => {
         xMax = d3.max( data, d => d[ 2 ]),
         yMin = d3.min( data, d => d[ 1 ]),
         yMax = d3.max( data, d => d[ 1 ]),
-        xScale = d3.scaleLog().domain([ xMin, xMax ]).range([ margin + padding, width - padding ]),
-        yScale = d3.scaleLog().domain([ yMin, yMax ]).range([ height - margin - padding, padding ]);
+        xScale = d3.scaleLog().domain([ xMin, xMax ]).range([ marginAxis + padding, width - padding ]),
+        yScale = d3.scaleLog().domain([ yMin, yMax ]).range([ height - marginAxis - padding, padding ]);
     
     // Hook to draw on mounting, or on any other lifecycle update.
     useEffect(() => {
-        Plot.draw( height, width, margin, padding, ref, xScale, yScale, symbolSet, dataSet, size );
+        Plot.draw( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet, dataSet, size );
     });
     
     // Return the component.
-    return <svg width={width} height={height} ref={ref}></svg>;
+    return <svg width={( width + marginLegend )} height={height} ref={ref}></svg>;
 };
     
 // Draws the points.
-Plot.draw = ( height, width, margin, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
+Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     
     // Initialization.
     const svg = d3.select( ref.current );
@@ -40,13 +40,13 @@ Plot.draw = ( height, width, margin, padding, ref, xScale, yScale, symbolSet, da
     let symbols = ( symbolSet === "geometric" ) ? d3.symbols : Symbols.symbols;
     let radius = ( size === 0 ) ? 0 : size + 0.5;
     let symbolSize = Math.PI * radius * radius;
-    let symbol = d3.scaleOrdinal( data.map( datum => datum[ 0 ]), symbols.map( s => d3.symbol().type( s ).size( symbolSize )()));
+    let symbolScale = d3.scaleOrdinal( data.map( datum => datum[ 0 ]), symbols.map( s => d3.symbol().type( s ).size( symbolSize )()));
     
     // Draw the points.
     svg.selectAll( "*" ).remove();
     data.forEach(( datum ) => {
         svg.append( "path" )
-        .attr( "d", symbol( datum[ 0 ]))
+        .attr( "d", symbolScale( datum[ 0 ]))
         .attr( "transform", d => `translate( ${ Math.round( xScale( datum[ 2 ]))}, ${ Math.round( yScale( datum[ 1 ]))})` )
         .style( "fill", "none" )
         .style( "stroke", "black" );
@@ -56,10 +56,10 @@ Plot.draw = ( height, width, margin, padding, ref, xScale, yScale, symbolSet, da
     let xAxis = d3.axisBottom( xScale ).ticks( 2.5 ).tickFormat(x => `${x.toFixed(0)}`);
     svg.append( "g" )
         .attr( "class", "axis" )
-        .attr( "transform", "translate( 0, " + ( height - margin ) + " )" )
+        .attr( "transform", "translate( 0, " + ( height - marginAxis ) + " )" )
         .call( xAxis );
     svg.append( "text" )
-        .attr( "transform", "translate(" + ( width / 2 ) + " ," + ( height - padding ) + ")" )
+        .attr( "transform", "translate( " + ( width / 2 ) + " ," + ( height - padding ) + ")" )
         .style( "text-anchor", "middle" )
         .style( "font-size", "10px" )
         .text( columnNames[ 2 ]);
@@ -68,7 +68,7 @@ Plot.draw = ( height, width, margin, padding, ref, xScale, yScale, symbolSet, da
     let yAxis = d3.axisLeft( yScale ).ticks( 2 ).tickFormat(x => `${x.toFixed(0)}`);
     svg.append( "g" )
         .attr( "class", "axis" )
-        .attr( "transform", "translate( " + margin + ", 0 )" )
+        .attr( "transform", "translate( " + marginAxis + ", 0 )" )
         .call( yAxis );
     svg.append( "text" )
         .attr( "transform", "rotate( -90 )" )
@@ -78,6 +78,28 @@ Plot.draw = ( height, width, margin, padding, ref, xScale, yScale, symbolSet, da
         .style( "text-anchor", "middle" )
         .style( "font-size", "10px" )
         .text( columnNames[ 1 ]);
+        
+    // Draw the legend.
+    let x = width + marginAxis + 3 * padding,
+        y = height / 3;
+    svg.append( "text" )
+        .attr( "x", x )
+        .attr( "y", y )
+        .style( "font-size", "10px" )
+        .text( columnNames[ 0 ]);
+    let domain = symbolScale.domain();
+    for( let i = 0; ( i < domain.length ); i++ ) {
+        svg.append( "text" )
+            .attr( "x", x )
+            .attr( "y", y + 20 + 20 * i )
+            .style( "font-size", "10px" )
+            .text( domain[ i ]);
+        svg.append( "path" )
+            .attr( "d", symbolScale( domain[ i ]))
+            .attr( "transform", d => `translate( ${( x - 12 )}, ${( y + 16 + 20 * i )})` )
+            .style( "fill", "none" )
+            .style( "stroke", "black" );
+    };
 };
 
 export default Plot;
