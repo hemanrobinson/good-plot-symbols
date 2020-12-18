@@ -15,7 +15,7 @@ const App = () => {
         <div className="Column">
             <div className="GridPlots">
                 <label>Geometric Symbols</label>
-                <label>Symbols with Preattentive Features</label>
+                <label>Preattentive Symbols</label>
                 <Plot symbolSet={"geometric"}    dataSet={dataSet} size={size} />
                 <Plot symbolSet={"preattentive"} dataSet={dataSet} size={size} />
             </div>
