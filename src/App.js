@@ -37,7 +37,7 @@ const App = () => {
                 Preattentive features include line orientation, closure, and terminators.  Distinct preattentive features make it easier for the user to find patterns in their data, and also reduce overlap between symbols.
                 </p>
                 <p>
-                <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> independently suggested Circle, Plus, and X as distinct symbols for data with few categories.  A good explanation of preattentive processing is on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
+                <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.  Preattentive processing is described on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
                 </p>
             </div>
         </div>
