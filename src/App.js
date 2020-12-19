@@ -22,8 +22,8 @@ const App = () => {
             <div className="GridControls">
                 <label>Size:</label>
                 <Slider defaultValue={ 5 } step={ 1 } min={ 0 } max={ 10 }
-                    valueLabelDisplay="auto" marks
-                    onChangeCommitted={( event, value ) => setSize( value )} />
+                    valueLabelDisplay="auto" marks valueLabelFormat={( value ) => value * value }
+                    onChangeCommitted={( event, value ) => setSize( value * value )} />
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 120}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>

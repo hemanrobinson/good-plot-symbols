@@ -33,11 +33,9 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
         columnNames = Data.getColumnNames( dataSet );
     svg.selectAll( "*" ).remove();
     
-    // Choose the symbol set.
+    // Choose the symbol scale.
     let symbols = ( symbolSet === "geometric" ) ? d3.symbols : Symbols.symbols,
-        radius = ( size === 0 ) ? 0 : size + 0.5,
-        symbolScale = d3.scaleOrdinal( data.map( datum => datum[ 0 ]),
-            symbols.map( s => d3.symbol().type( s ).size( Math.PI * radius * radius )()));
+        symbolScale = d3.scaleOrdinal( data.map( datum => datum[ 0 ]), symbols.map( s => d3.symbol().type( s ).size( size )()));
     
     // Draw the points.
     data.forEach(( datum ) => {
