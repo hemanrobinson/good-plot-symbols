@@ -12,8 +12,9 @@ const Plot = ( props ) => {
     let ref = useRef(),
         { symbolSet, dataSet, size } = props,
         data = Data.getValues( dataSet ),
-        xScale = d3.scaleLog().domain([ d3.min( data, d => d[ 2 ]), d3.max( data, d => d[ 2 ])]).range([ marginAxis + padding, width - padding ]),
-        yScale = d3.scaleLog().domain([ d3.min( data, d => d[ 1 ]), d3.max( data, d => d[ 1 ])]).range([ height - marginAxis - padding, padding ]);
+        scale = ( dataSet === "Business" ) ? d3.scaleLog : d3.scaleLinear,
+        xScale = scale().domain([ d3.min( data, d => d[ 2 ]), d3.max( data, d => d[ 2 ])]).range([ marginAxis + padding, width - padding ]),
+        yScale = scale().domain([ d3.min( data, d => d[ 1 ]), d3.max( data, d => d[ 1 ])]).range([ height - marginAxis - padding, padding ]);
     
     // Hook to draw on mounting, or on any other lifecycle update.
     useEffect(() => {
@@ -60,7 +61,7 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
     svg.append( "g" )
         .attr( "class", "axis" )
         .attr( "transform", "translate( " + marginAxis + ", 0 )" )
-        .call( d3.axisLeft( yScale ).ticks( 2 ).tickFormat(( x ) => { return x.toFixed( 0 )}));
+        .call( d3.axisLeft( yScale ).ticks(( dataSet === "Business" ) ? 2 : 3 ).tickFormat(( x ) => { return x.toFixed( 0 )}));
     svg.append( "text" )
         .attr( "transform", "rotate( -90 )" )
         .attr( "x", -height / 2 )

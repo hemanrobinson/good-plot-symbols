@@ -8,7 +8,7 @@ const App = () => {
     
     // Create state.
     const [ dataSet, setDataSet ] = useState( "Iris" );
-    const [ size, setSize ] = useState( 5 );
+    const [ size, setSize ] = useState( 100 );
     
     // Return the App.
     return (
@@ -21,7 +21,7 @@ const App = () => {
             </div>
             <div className="GridControls">
                 <label>Size:</label>
-                <Slider defaultValue={ 5 } step={ 1 } min={ 0 } max={ 10 }
+                <Slider defaultValue={ 10 } step={ 1 } min={ 0 } max={ 20 }
                     valueLabelDisplay="auto" marks valueLabelFormat={( value ) => value * value }
                     onChangeCommitted={( event, value ) => setSize( value * value )} />
                 <label>Data Set:</label>
@@ -29,12 +29,12 @@ const App = () => {
                     onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
-                    <MenuItem value="Rice">Rice</MenuItem>
+                    <MenuItem value="Cytometry">Cytometry</MenuItem>
                 </Select>
             </div>
             <div className="Description">
                 <p>
-                Preattentive features include orientation, closure, and terminators.  Distinct preattentive features make it easier for the user to find patterns in their data.  These features also reduce overlap between symbols.
+                Preattentive features include line orientation, closure, and terminators.  Distinct preattentive features make it easier for the user to find patterns in their data, and also reduce overlap between symbols.
                 </p>
                 <p>
                 A good explanation of preattentive processing is on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
