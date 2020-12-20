@@ -110,7 +110,7 @@ Data.getValues = (  dataSet ) => {
             [ "Soap", 576.9, 4000 ]
         ]; break;
         
-        // Subset of Cytometry, from JMP.
+        // Cell metrics, with clustering and principal components.  Subset of Cytometry, from JMP(r) software (http://www.jmp.com).  
         case "Cytometry": data = [
             [ 1, 1.18416843568427, -0.302985016297839 ],
             [ 1, 1.29938437267836, -0.669138890950066 ],

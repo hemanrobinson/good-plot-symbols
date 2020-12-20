@@ -71,25 +71,25 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
         
     // Draw the legend.
     const domain = symbolScale.domain(),
-        n = domain.length,
-        d = 20,
-        x = width + marginAxis,
-        y = ( height + marginAxis - d * n ) / 2;
+        d = 20;
+    let x = width + marginAxis,
+        y = ( height + marginAxis - d - d * domain.length ) / 2;
     svg.append( "text" )
         .attr( "x", x - d )
-        .attr( "y", y - d )
+        .attr( "y", y )
         .text( columnNames[ 0 ]);
-    for( let i = 0; ( i < n ); i++ ) {
+    domain.forEach(( item ) => {
+        y += d;
         svg.append( "text" )
             .attr( "x", x )
-            .attr( "y", y + d * i )
-            .text( domain[ i ]);
+            .attr( "y", y )
+            .text( item );
         svg.append( "path" )
-            .attr( "d", symbolScale( domain[ i ]))
-            .attr( "transform", "translate( " + ( x - 12 ) + ", " + ( y + d * i - 4 ) + " )" )
+            .attr( "d", symbolScale( item ))
+            .attr( "transform", "translate( " + ( x - 12 ) + ", " + ( y - 4 ) + " )" )
             .style( "fill", "none" )
             .style( "stroke", "black" );
-    };
+    });
 };
 
 export default Plot;
