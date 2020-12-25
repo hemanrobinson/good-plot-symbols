@@ -75,7 +75,7 @@ Symbols.symbolAsterisk = {
 Symbols.symbolSquare = {
     draw: function( g, size ) {
         let s = Math.sqrt( size / Math.PI );
-        s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 4 ) + 0.5;   // +0.5 minimizes anti-aliasing.
+        s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / 4 ) + 0.5;                       // +0.5 minimizes anti-aliasing.
         g.moveTo(  s,  s );
         g.lineTo(  s, -s );
         g.lineTo( -s, -s );
@@ -84,7 +84,28 @@ Symbols.symbolSquare = {
     }
 };
 
+// Diamond.
+Symbols.symbolDiamond = {
+    draw: function( g, size ) {
+        let s = Math.sqrt( size / Math.PI );
+        s = ( size === 0 ) ? 0 : Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 0.25 );     // +0.25 accounts for center pixel.
+        s -= 0.5;                                                                           // 0.5 draws to center of pixels
+        g.moveTo( 0.5, -s );
+        g.lineTo( s, -0.5 );
+        g.closePath();
+        g.moveTo( s, -0.5 );
+        g.lineTo( 0.5, s - 1 );
+        g.closePath();
+        g.moveTo( 0.5, s - 1 );
+        g.lineTo( 1 - s, -0.5 );
+        g.closePath();
+        g.moveTo( 1 - s, -0.5 );
+        g.lineTo( 0.5, -s );
+        g.closePath();
+    }
+};
+
 // Symbol set.
-Symbols.symbols = [ Symbols.symbolCircle, Symbols.symbolPlus, Symbols.symbolX, Symbols.symbolTriangle, Symbols.symbolAsterisk, Symbols.symbolSquare ];
+Symbols.symbols = [ Symbols.symbolCircle, Symbols.symbolPlus, Symbols.symbolX, Symbols.symbolTriangle, Symbols.symbolAsterisk, Symbols.symbolSquare, Symbols.symbolDiamond ];
     
 export default Symbols;
