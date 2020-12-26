@@ -1,12 +1,14 @@
 // Equally weighted symbols with preattentive features.
-// When translating from (0,0), use integers to minimize anti-aliasing, as 0.5 is added.
+// Symbols are centered at (0,0).  When translating,
+// round to the center of the pixel to minimize anti-aliasing, e.g.
+//      .attr( "transform", "translate( " + ( Math.floor( x ) + 0.5 ) + ", " + ( Math.floor( y ) + 0.5 ) + " )" )
 const Symbols = () => {
 }
     
 // Circle.
 Symbols.symbolCircle = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );                           // matches d3.symbolCircle
+        let s = Math.sqrt( size / Math.PI ) + 0.5;                     // +0.5 minimizes anti-aliasing.
         g.arc( 0, 0, s, 0, 2 * Math.PI );
         g.closePath();
     }}
@@ -17,11 +19,11 @@ Symbols.symbolPlus = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.round( s * Math.PI / 2 - 0.25 );                      // -0.25 accounts for center pixel.
-        g.moveTo( 0.5 - s, 0.5 );
-        g.lineTo( 0.5 + s, 0.5 );
+        g.moveTo( -s,  0 );
+        g.lineTo(  s,  0 );
         g.closePath();
-        g.moveTo( 0.5, 0.5 + s );
-        g.lineTo( 0.5, 0.5 - s );
+        g.moveTo(  0,  s );
+        g.lineTo(  0, -s );
         g.closePath();
     }}
 };
@@ -30,12 +32,12 @@ Symbols.symbolPlus = {
 Symbols.symbolX = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) - 0.25 );     // -0.25 accounts for center pixel.
-        g.moveTo( 0.5 - s, 0.5 - s );
-        g.lineTo( 0.5 + s, 0.5 + s );
+        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 0.75 );     // +0.75 accounts for center pixel.
+        g.moveTo( -s, -s );
+        g.lineTo(  s,  s );
         g.closePath();
-        g.moveTo( 0.5 - s, 0.5 + s );
-        g.lineTo( 0.5 + s, 0.5 - s );
+        g.moveTo( -s,  s );
+        g.lineTo(  s, -s );
         g.closePath();
     }}
 };
@@ -47,9 +49,9 @@ Symbols.symbolTriangle = {
         s = Math.round( s * Math.PI / 3 + 1 );                         // +1 accounts for overlap.
         let t = Math.round( s * Math.sin( Math.PI / 6 )),
             u = Math.round( s * Math.cos( Math.PI / 6 ));
-        g.moveTo( 0.5    , 0.5 - s );
-        g.lineTo( 0.5 + u, 0.5 + t );
-        g.lineTo( 0.5 - u, 0.5 + t );
+        g.moveTo(  0, -s );
+        g.lineTo(  u,  t );
+        g.lineTo( -u,  t );
         g.closePath();
     }}
 };
@@ -61,14 +63,14 @@ Symbols.symbolAsterisk = {
         s = Math.round( s * Math.PI / 3 + 1 );                         // +1 accounts for overlap.
         let t = Math.round( s * Math.sin( Math.PI / 6 )),
             u = Math.round( s * Math.cos( Math.PI / 6 ));
-        g.moveTo( 0.5, 0.5 + s );
-        g.lineTo( 0.5, 0.5 - s );
+        g.moveTo(  0,  s );
+        g.lineTo(  0, -s );
         g.closePath();
-        g.moveTo( 0.5 - u, 0.5 - t );
-        g.lineTo( 0.5 + u, 0.5 + t );
+        g.moveTo( -u, -t );
+        g.lineTo(  u,  t );
         g.closePath();
-        g.moveTo( 0.5 - u, 0.5 + t );
-        g.lineTo( 0.5 + u, 0.5 - t );
+        g.moveTo( -u,  t );
+        g.lineTo(  u, -t );
         g.closePath();
     }}
 };
@@ -77,7 +79,7 @@ Symbols.symbolAsterisk = {
 Symbols.symbolSquare = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 4 ) + 0.5;
+        s = Math.round( s * Math.PI / 4 + 1 );                         // +1 accounts for overlap.
         g.moveTo(  s,  s );
         g.lineTo(  s, -s );
         g.lineTo( -s, -s );
@@ -90,18 +92,18 @@ Symbols.symbolSquare = {
 Symbols.symbolDiamond = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 )) + 0.5;
-        g.moveTo( 0.5, -s );
-        g.lineTo( s, -0.5 );
+        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ));
+        g.moveTo(  0, -s );
+        g.lineTo(  s,  0 );
         g.closePath();
-        g.moveTo( s, -0.5 );
-        g.lineTo( 0.5, s - 1 );
+        g.moveTo(  s,  0 );
+        g.lineTo(  0,  s - 1 );
         g.closePath();
-        g.moveTo( 0.5, s - 1 );
-        g.lineTo( 1 - s, -0.5 );
+        g.moveTo(  0,  s - 1 );
+        g.lineTo( -s,  0 );
         g.closePath();
-        g.moveTo( 1 - s, -0.5 );
-        g.lineTo( 0.5, -s );
+        g.moveTo( -s,  0 );
+        g.lineTo(  0, -s );
         g.closePath();
     }}
 };

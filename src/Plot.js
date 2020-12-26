@@ -42,7 +42,8 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
     data.forEach(( datum ) => {
         svg.append( "path" )
         .attr( "d", symbolScale( datum[ 0 ]))
-        .attr( "transform", d => "translate( " + Math.round( xScale( datum[ 2 ])) + ", " + Math.round( yScale( datum[ 1 ])) + " )" )
+//        .attr( "transform", d => "translate( " + Math.round( xScale( datum[ 2 ])) + ", " + Math.round( yScale( datum[ 1 ])) + " )" )
+        .attr( "transform", d => "translate( " + ( Math.floor( xScale( datum[ 2 ])) + 0.5 ) + ", " + ( Math.floor( yScale( datum[ 1 ])) + 0.5 ) + " )" )
         .style( "fill", "none" )
         .style( "stroke", "black" );
     });
@@ -72,8 +73,8 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
     // Draw the legend.
     const domain = symbolScale.domain(),
         d = 20;
-    let x = width + marginAxis,
-        y = ( height + marginAxis - d - d * domain.length ) / 2;
+    let x = width + marginAxis + 0.5,
+        y = Math.floor(( height + marginAxis - d - d * domain.length ) / 2 ) + 0.5;
     svg.append( "text" )
         .attr( "x", x - d )
         .attr( "y", y )
@@ -86,7 +87,7 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
             .text( item );
         svg.append( "path" )
             .attr( "d", symbolScale( item ))
-            .attr( "transform", "translate( " + ( x - 12 ) + ", " + ( y - 4 ) + " )" )
+            .attr( "transform", "translate( " + ( x - 12 ) + ", " + ( y - 3 ) + " )" )
             .style( "fill", "none" )
             .style( "stroke", "black" );
     });
