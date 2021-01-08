@@ -42,7 +42,6 @@ Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet
     data.forEach(( datum ) => {
         svg.append( "path" )
         .attr( "d", symbolScale( datum[ 0 ]))
-//        .attr( "transform", d => "translate( " + Math.round( xScale( datum[ 2 ])) + ", " + Math.round( yScale( datum[ 1 ])) + " )" )
         .attr( "transform", d => "translate( " + ( Math.floor( xScale( datum[ 2 ])) + 0.5 ) + ", " + ( Math.floor( yScale( datum[ 1 ])) + 0.5 ) + " )" )
         .style( "fill", "none" )
         .style( "stroke", "black" );
