@@ -10,14 +10,20 @@
 		F80AD3FC2587B85A00A59892 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
 		F80AD3FD2587B85A00A59892 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		F80AD3FF2587B88900A59892 /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
+		F8928E6325A9F2F600C008DE /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		F8928E6425A9F2F600C008DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8928E6725A9F65300C008DE /* package-lock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "package-lock.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		F80AD3F12587B82D00A59892 = {
 			isa = PBXGroup;
 			children = (
-				F80AD3FF2587B88900A59892 /* public */,
+				F8928E6325A9F2F600C008DE /* LICENSE.txt */,
+				F8928E6425A9F2F600C008DE /* README.md */,
 				F80AD3FD2587B85A00A59892 /* package.json */,
+				F8928E6725A9F65300C008DE /* package-lock.json */,
+				F80AD3FF2587B88900A59892 /* public */,
 				F80AD3FC2587B85A00A59892 /* src */,
 			);
 			sourceTree = "<group>";

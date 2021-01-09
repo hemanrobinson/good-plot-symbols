@@ -34,10 +34,16 @@ const App = () => {
             </div>
             <div className="Description">
                 <p>
-                Preattentive features include line orientation, closure, and terminators.  Distinct preattentive features make it easier for the user to find patterns in their data, and also reduce overlap between symbols.
+                Preattentive features are detected quickly, before normal visual processing takes place.  Preattentive features make it easier to find patterns in scatter plots by improving discriminability and reducing overlap.
                 </p>
                 <p>
-                <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.  Preattentive processing is described on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
+                Graphics frameworks often use closed geometric symbols.  The distinction between closed versus open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
+                </p>
+                <p>
+                Preattentive processing has generally been studied by psychologists, but statisticians have an interest because of its applicability to data visualization. <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.
+                </p>
+                <p>
+                The preattentive literature is extensive.  A good introduction is on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
                 </p>
             </div>
         </div>
