@@ -1,11 +1,19 @@
-// Equally weighted symbols with preattentive features.
-// Symbols are centered at (0,0).  When translating,
-// round to the center of the pixel to minimize anti-aliasing, e.g.
-//      .attr( "transform", "translate( " + ( Math.floor( x ) + 0.5 ) + ", " + ( Math.floor( y ) + 0.5 ) + " )" )
+/**
+ * Equally weighted symbols with preattentive features.
+ *
+ * Symbols are centered at (0,0).  When translating,
+ * round to the center of the pixel to minimize anti-aliasing, e.g.
+ *      .attr( "transform", "translate( " + ( Math.floor( x ) + 0.5 ) + ", " + ( Math.floor( y ) + 0.5 ) + " )" )
+ *
+ * @param  {Object}  props  properties
+ * @return component
+ */
 const Symbols = () => {
 }
     
-// Circle.
+/**
+ * Circle.
+ */
 Symbols.symbolCircle = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI ) + 0.5;                     // +0.5 minimizes anti-aliasing.
@@ -14,7 +22,9 @@ Symbols.symbolCircle = {
     }}
 };
 
-// Plus.
+/**
+ * Plus.
+ */
 Symbols.symbolPlus = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
@@ -28,7 +38,9 @@ Symbols.symbolPlus = {
     }}
 };
 
-// X.
+/**
+ * X.
+ */
 Symbols.symbolX = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
@@ -42,7 +54,9 @@ Symbols.symbolX = {
     }}
 };
 
-// Triangle.
+/**
+ * Triangle.
+ */
 Symbols.symbolTriangle = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
@@ -56,7 +70,9 @@ Symbols.symbolTriangle = {
     }}
 };
 
-// Asterisk.
+/**
+ * Asterisk.
+ */
 Symbols.symbolAsterisk = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
@@ -75,7 +91,9 @@ Symbols.symbolAsterisk = {
     }}
 };
 
-// Square.
+/**
+ * Square.
+ */
 Symbols.symbolSquare = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
@@ -88,7 +106,9 @@ Symbols.symbolSquare = {
     }}
 };
 
-// Diamond.
+/**
+ * Diamond.
+ */
 Symbols.symbolDiamond = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
@@ -108,7 +128,9 @@ Symbols.symbolDiamond = {
     }}
 };
 
-// Symbol set.
+/**
+ * Preattentive symbol set.
+ */
 Symbols.symbols = [ Symbols.symbolCircle, Symbols.symbolPlus, Symbols.symbolX, Symbols.symbolTriangle, Symbols.symbolAsterisk, Symbols.symbolSquare, Symbols.symbolDiamond ];
     
 export default Symbols;

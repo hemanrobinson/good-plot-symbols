@@ -4,7 +4,12 @@ import Data from './Data';
 import Symbols from './Symbols';
 import './Plot.css';
 
-// Scatter plot in an SVG element.
+/**
+ * Scatter plot in an SVG element.
+ *
+ * @param  {Object}  props  properties
+ * @return component
+ */
 const Plot = ( props ) => {
     
     // Create reference and scales.
@@ -16,7 +21,7 @@ const Plot = ( props ) => {
         xScale = scale().domain([ d3.min( data, d => d[ 2 ]), d3.max( data, d => d[ 2 ])]).range([ marginAxis + padding, width - padding ]),
         yScale = scale().domain([ d3.min( data, d => d[ 1 ]), d3.max( data, d => d[ 1 ])]).range([ height - marginAxis - padding, padding ]);
     
-    // Hook to draw on mounting, or on any other lifecycle update.
+    // Set hook to draw on mounting.
     useEffect(() => {
         Plot.draw( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet, dataSet, size );
     });
@@ -24,8 +29,21 @@ const Plot = ( props ) => {
     // Return the component.
     return <svg width={( width + marginLegend )} height={height} ref={ref}></svg>;
 };
-    
-// Draws the points.
+
+/**
+ * Draws the points.
+ *
+ * @param {number}     height      height in pixels
+ * @param {number}     width       width in pixels
+ * @param {number}     marginAxis  margin in pixels
+ * @param {number}     padding     padding in pixels
+ * @param {Array}      ref         reference to SVG element
+ * @param {d3.scale*}  xScale      X scale
+ * @param {d3.scale*}  yScale      Y scale
+ * @param {string}     symbolSet   one of "geometric", "preattentive"
+ * @param {Array}      dataSet     one of "Iris", "Business", "Cytometry"
+ * @param {number}     size        size in pixels
+ */
 Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     
     // Initialization.

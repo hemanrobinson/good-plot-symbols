@@ -3,14 +3,16 @@ import { Slider, Select, MenuItem } from '@material-ui/core';
 import Plot from './Plot';
 import './App.css';
 
-// Application:  Side-by-side scatter plots.
+/**
+ * Side-by-side scatter plots.
+ */
 const App = () => {
     
     // Create state.
     const [ dataSet, setDataSet ] = useState( "Iris" );
     const [ size, setSize ] = useState( 100 );
     
-    // Return the App.
+    // Return the component.
     return (
         <div className="Column">
             <div className="GridPlots">

@@ -1,8 +1,18 @@
-// Data sets.
+/**
+ * Data sets.
+ *
+ * @param  {Object}  props  properties
+ * @return component
+ */
 const Data = ( props ) => {
 };
 
-// Returns column names.
+/**
+ * Returns column names.
+ *
+ * @param  {string}    dataSet  data set name
+ * @return {string[]}  column names
+ */
 Data.getColumnNames = (  dataSet ) => {
     let names = [];
     switch( dataSet ) {
@@ -13,8 +23,14 @@ Data.getColumnNames = (  dataSet ) => {
     return names;
 };
 
+/**
+ * Returns data values.
+ *
+ * @param  {string}   dataSet  data set name
+ * @return {Array[]}  data values by row
+ */
 // Returns values.
-Data.getValues = (  dataSet ) => {
+Data.getValues = ( dataSet ) => {
     let data = [];
     switch( dataSet ) {
     
