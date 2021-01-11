@@ -5,7 +5,8 @@ div {
 }
 .Description {
     text-align: left;
-    margin: 0 200px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 .Column {
     display: flex;
@@ -15,6 +16,7 @@ div {
     display: grid;
     grid-template-columns: repeat( 2, 1fr );
     justify-items: center;
+    margin: 0 auto;
 }
 .GridControls {
     display: grid;
