@@ -43,14 +43,14 @@ const App = () => {
                 <p>
                 Graphics frameworks often use closed geometric symbols.  The distinction between closed versus open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
                 </p>
-                <p align="center">
+                <p className="center">
                     <img alt="Preattentive Symbols" src={symbolsPreattentive} />
                 </p>
                 <p>
                 <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.
                 The Circle is considered the best symbol when data have only one category, because it minimizes interference between points.  The order of the remaining symbols was determined by <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2019.1637746">usability tests</a>.
                 </p>
-                <p align="center">
+                <p className="center">
                     <img alt="Discriminable Symbols" src={symbolsDiscriminable} />
                 </p>
                 <p>

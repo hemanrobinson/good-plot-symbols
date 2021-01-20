@@ -3,6 +3,9 @@ div {
     text-align: center;
     gap: 10px;
 }
+p.center {
+    text-align: center;
+}
 .Description {
     text-align: left;
     max-width: 1000px;
