@@ -17,6 +17,9 @@ const App = () => {
     // Return the component.
     return (
         <div className="Column">
+            <div className="Description">
+                <h1>Preattentive Plot Symbols</h1>
+            </div>
             <div className="GridPlots">
                 <label>Geometric Symbols</label>
                 <label>Preattentive Symbols</label>
