@@ -1,6 +1,7 @@
 /* SVG element. */
 svg {
     border: 1px solid black;
+    background-color: #ffffff;
     font-size: 10px;
 }
 

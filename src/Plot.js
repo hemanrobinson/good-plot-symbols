@@ -23,7 +23,7 @@ const Plot = ( props ) => {
     
     // Set hook to draw on mounting.
     useEffect(() => {
-        Plot.draw( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet, dataSet, size );
+        Plot.draw( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size );
     });
     
     // Return the component.
@@ -33,9 +33,10 @@ const Plot = ( props ) => {
 /**
  * Draws the points.
  *
- * @param {number}     height      height in pixels
- * @param {number}     width       width in pixels
- * @param {number}     marginAxis  margin in pixels
+ * @param {number}     width       width, in pixels
+ * @param {number}     height      height, in pixels
+ * @param {number}     marginAxis  margin for axis, in pixels
+ * @param {number}     marginLegend  margin for legend, in pixels
  * @param {number}     padding     padding in pixels
  * @param {Array}      ref         reference to SVG element
  * @param {d3.scale*}  xScale      X scale
@@ -44,7 +45,7 @@ const Plot = ( props ) => {
  * @param {Array}      dataSet     one of "Iris", "Business", "Cytometry"
  * @param {number}     size        size in pixels
  */
-Plot.draw = ( height, width, marginAxis, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
+Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     
     // Initialization.
     const svg = d3.select( ref.current );

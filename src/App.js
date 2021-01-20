@@ -32,7 +32,7 @@ const App = () => {
                     valueLabelDisplay="auto" marks valueLabelFormat={( value ) => value * value }
                     onChangeCommitted={( event, value ) => setSize( value * value )} />
                 <label>Data Set:</label>
-                <Select value={ dataSet } style={{minWidth: 120}}
+                <Select value={ dataSet } style={{minWidth: 120, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
