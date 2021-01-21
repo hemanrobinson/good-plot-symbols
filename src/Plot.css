@@ -1,6 +1,6 @@
 /* SVG element. */
 svg {
-    border: 1px solid black;
+    border: 1px solid #939ba1;
     background-color: #ffffff;
     font-size: 10px;
 }
@@ -8,5 +8,5 @@ svg {
 /* Axis */
 .axis path,
 .axis line {
-    stroke: #a0a0a0;
+    stroke: #939ba1;
 }

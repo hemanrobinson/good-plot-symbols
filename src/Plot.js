@@ -13,13 +13,14 @@ import './Plot.css';
 const Plot = ( props ) => {
     
     // Create reference and scales.
-    const padding = 20, marginAxis = 40, marginLegend = 100, height = 400, width = 400;
+    const padding = 20, marginAxis = 40, marginLegend = 80, height = 400, width = 400;
     let ref = useRef(),
         { symbolSet, dataSet, size } = props,
         data = Data.getValues( dataSet ),
         scale = ( dataSet === "Business" ) ? d3.scaleLog : d3.scaleLinear,
-        xScale = scale().domain([ d3.min( data, d => d[ 2 ]), d3.max( data, d => d[ 2 ])]).range([ marginAxis + padding, width - padding ]),
-        yScale = scale().domain([ d3.min( data, d => d[ 1 ]), d3.max( data, d => d[ 1 ])]).range([ height - marginAxis - padding, padding ]);
+        margin = ( dataSet === "Business" ) ? 1.2 : 1.05,
+        xScale = scale().domain([ d3.min( data, d => d[ 2 ]), margin * d3.max( data, d => d[ 2 ])]).range([ marginAxis + padding, width - padding ]),
+        yScale = scale().domain([ d3.min( data, d => d[ 1 ]), margin * d3.max( data, d => d[ 1 ])]).range([ height - marginAxis - padding, padding ]);
     
     // Set hook to draw on mounting.
     useEffect(() => {
@@ -48,10 +49,37 @@ const Plot = ( props ) => {
 Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
     
     // Initialization.
-    const svg = d3.select( ref.current );
+    const svg = d3.select( ref.current ),
+        colorLight = "#ebeeef";
     let data = Data.getValues( dataSet ),
         columnNames = Data.getColumnNames( dataSet );
     svg.selectAll( "*" ).remove();
+        
+    // Clear the margins.
+    svg.append( "rect" )
+        .attr( "x", 0 )
+        .attr( "y", 0 )
+        .attr( "width", width + marginLegend )
+        .attr( "height", padding )
+        .style( "fill", colorLight );
+    svg.append( "rect" )
+        .attr( "x", width - padding )
+        .attr( "y", 0 )
+        .attr( "width", marginLegend + padding )
+        .attr( "height", height )
+        .style( "fill", colorLight );
+    svg.append( "rect" )
+        .attr( "x", 0 )
+        .attr( "y", height - marginAxis )
+        .attr( "width", width )
+        .attr( "height", marginAxis )
+        .style( "fill", colorLight );
+    svg.append( "rect" )
+        .attr( "x", 0 )
+        .attr( "y", 0 )
+        .attr( "width", marginAxis )
+        .attr( "height", height )
+        .style( "fill", colorLight );
     
     // Choose the symbol scale.
     let symbols = ( symbolSet === "geometric" ) ? d3.symbols : Symbols.symbols,
@@ -91,8 +119,8 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     // Draw the legend.
     const domain = symbolScale.domain(),
         d = 20;
-    let x = width + marginAxis + 0.5,
-        y = Math.floor(( height + marginAxis - d - d * domain.length ) / 2 ) + 0.5;
+    let x = width + d + 0.5,
+        y = Math.floor(( height - d * domain.length ) / 2 ) + 0.5;
     svg.append( "text" )
         .attr( "x", x - d )
         .attr( "y", y )
