@@ -1,8 +1,13 @@
 {
   "short_name": "Preattentive",
-  "name": "Preattentive Symbols",
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "name": "Preattentive Plot Symbols",
+    "icons": [{
+        "src": "favicon.ico",
+        "sizes": "48x48 32x32 24x24 16x16",
+        "type": "image/x-icon"
+    }],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
 }
