@@ -60,6 +60,7 @@ const App = () => {
                 Preattentive processing was originally studied by cognitive psychologists.  The preattentive literature is extensive.  A good introduction is on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
                 </p>
             </div>
+            <a href="https://github.com/hemanrobinson/preattentive/">Shared on GitHub</a>
         </div>
     );
 }
