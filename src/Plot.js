@@ -13,14 +13,19 @@ import './Plot.css';
 const Plot = ( props ) => {
     
     // Create reference and scales.
-    const padding = 20, marginAxis = 40, marginLegend = 80, height = 400, width = 400;
+    const padding = 20, marginAxis = 50, marginLegend = 100, height = 400, width = 400;
     let ref = useRef(),
         { symbolSet, dataSet, size } = props,
         data = Data.getValues( dataSet ),
         scale = ( dataSet === "Business" ) ? d3.scaleLog : d3.scaleLinear,
-        margin = ( dataSet === "Business" ) ? 1.2 : 1.05,
-        xScale = scale().domain([ d3.min( data, d => d[ 2 ]), margin * d3.max( data, d => d[ 2 ])]).range([ marginAxis + padding, width - padding ]),
-        yScale = scale().domain([ d3.min( data, d => d[ 1 ]), margin * d3.max( data, d => d[ 1 ])]).range([ height - marginAxis - padding, padding ]);
+        xMin = d3.min( data, d => d[ 2 ]),
+        xMax = d3.max( data, d => d[ 2 ]),
+        yMin = d3.min( data, d => d[ 1 ]),
+        yMax = d3.max( data, d => d[ 1 ]),
+        xMargin = (( dataSet === "Business" ) ? .2 : .05 ) * ( xMax - xMin ),
+        yMargin = (( dataSet === "Business" ) ? .2 : .05 ) * ( yMax - yMin ),
+        xScale = scale().domain([ xMin, xMax + xMargin ]).range([ marginAxis + padding, width - padding ]),
+        yScale = scale().domain([ yMin, yMax + yMargin ]).range([ height - marginAxis - padding, padding ]);
     
     // Set hook to draw on mounting.
     useEffect(() => {
@@ -98,7 +103,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     svg.append( "g" )
         .attr( "class", "axis" )
         .attr( "transform", "translate( 0, " + ( height - marginAxis ) + " )" )
-        .call( d3.axisBottom( xScale ).ticks( 2.5 ).tickFormat(( x ) => { return x.toFixed( 0 )}));
+        .call( d3.axisBottom( xScale ).ticks( 2.5 ));
     svg.append( "text" )
         .attr( "transform", "translate( " + ( width / 2 ) + " ," + ( height - padding / 2 ) + ")" )
         .style( "text-anchor", "middle" )
@@ -108,7 +113,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     svg.append( "g" )
         .attr( "class", "axis" )
         .attr( "transform", "translate( " + marginAxis + ", 0 )" )
-        .call( d3.axisLeft( yScale ).ticks(( dataSet === "Business" ) ? 2 : 3 ).tickFormat(( x ) => { return x.toFixed( 0 )}));
+        .call( d3.axisLeft( yScale ).ticks(( dataSet === "Business" ) ? 2 : 3 ).tickFormat(( x ) => (( dataSet === "Business" ) ? x.toFixed( 0 ) : x )));
     svg.append( "text" )
         .attr( "transform", "rotate( -90 )" )
         .attr( "x", -height / 2 )

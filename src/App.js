@@ -36,7 +36,9 @@ const App = () => {
                     onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
+                    <MenuItem value="Cherts">Cherts</MenuItem>
                     <MenuItem value="Cytometry">Cytometry</MenuItem>
+                    <MenuItem value="Decathlon">Decathlon</MenuItem>
                 </Select>
             </div>
             <div className="Description">
@@ -60,7 +62,7 @@ const App = () => {
                 Preattentive processing was originally studied by cognitive psychologists.  The preattentive literature is extensive.  A good introduction is on the <a href="https://infovis-wiki.net/wiki/Preattentive_processing">InfoVis Wiki</a>.
                 </p>
             </div>
-            <a href="https://github.com/hemanrobinson/preattentive/">Shared on GitHub</a>
+            <a href="https://github.com/hemanrobinson/preattentive/">Code Shared on GitHub</a>
         </div>
     );
 }
