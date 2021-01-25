@@ -103,7 +103,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     svg.append( "g" )
         .attr( "class", "axis" )
         .attr( "transform", "translate( 0, " + ( height - marginAxis ) + " )" )
-        .call( d3.axisBottom( xScale ).ticks( 2.5 ));
+        .call( d3.axisBottom( xScale ).ticks( 2.5 ).tickFormat(( x ) => (( dataSet === "Business" ) ? x.toFixed( 0 ) : x )));
     svg.append( "text" )
         .attr( "transform", "translate( " + ( width / 2 ) + " ," + ( height - padding / 2 ) + ")" )
         .style( "text-anchor", "middle" )
@@ -123,12 +123,12 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
         
     // Draw the legend.
     const domain = symbolScale.domain(),
-        d = 20;
-    let x = width + d + 0.5,
+        d = 20 + 4 * Math.floor( size / 100 );
+    let x = width + d / 2 + 4.5,
         y = Math.floor(( height - d * domain.length ) / 2 ) + 0.5;
     svg.append( "text" )
-        .attr( "x", x - d )
-        .attr( "y", y )
+        .attr( "x", x - d - 1 )
+        .attr( "y", Math.max( y, y + (( d > 20 ) ? d / 4 : 0 )))
         .text( columnNames[ 0 ]);
     domain.forEach(( item ) => {
         y += d;
@@ -138,7 +138,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
             .text( item );
         svg.append( "path" )
             .attr( "d", symbolScale( item ))
-            .attr( "transform", "translate( " + ( x - 12 ) + ", " + ( y - 3 ) + " )" )
+            .attr( "transform", "translate( " + ( x - d / 2 ) + ", " + ( y - 3 ) + " )" )
             .style( "fill", "none" )
             .style( "stroke", "black" );
     });

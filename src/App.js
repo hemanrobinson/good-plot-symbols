@@ -28,17 +28,17 @@ const App = () => {
             </div>
             <div className="GridControls">
                 <label>Size:</label>
-                <Slider defaultValue={ 10 } step={ 1 } min={ 0 } max={ 20 }
+                <Slider defaultValue={ 10 } step={ 1 } min={ 1 } max={ 20 }
                     valueLabelDisplay="auto" marks valueLabelFormat={( value ) => value * value }
                     onChangeCommitted={( event, value ) => setSize( value * value )} />
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 120, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
-                    <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
                     <MenuItem value="Cherts">Cherts</MenuItem>
                     <MenuItem value="Cytometry">Cytometry</MenuItem>
                     <MenuItem value="Decathlon">Decathlon</MenuItem>
+                    <MenuItem value="Iris">Iris</MenuItem>
                 </Select>
             </div>
             <div className="Description">
