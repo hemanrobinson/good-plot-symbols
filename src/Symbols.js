@@ -1,5 +1,5 @@
 /**
- * Equally weighted symbols with preattentive features.
+ * Symbols with preattentive features and approximately equal weight.
  *
  * Symbols are centered at (0,0).  When translating,
  * round to the center of the pixel to minimize anti-aliasing, e.g.
@@ -60,7 +60,7 @@ Symbols.symbolX = {
 Symbols.symbolTriangle = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 3 + 1 );                         // +1 accounts for overlap.
+        s = Math.round( s * Math.PI / 3 + 0.5 );                        // +0.5 accounts for overlap.
         let t = Math.round( s * Math.sin( Math.PI / 6 )),
             u = Math.round( s * Math.cos( Math.PI / 6 ));
         g.moveTo(  0, -s );
@@ -76,7 +76,7 @@ Symbols.symbolTriangle = {
 Symbols.symbolAsterisk = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 3 + 1 );                         // +1 accounts for overlap.
+        s = Math.round( s * Math.PI / 3 + 0.5 );                        // +0.5 accounts for overlap.
         let t = Math.round( s * Math.sin( Math.PI / 6 )),
             u = Math.round( s * Math.cos( Math.PI / 6 ));
         g.moveTo(  0,  s );
@@ -97,7 +97,7 @@ Symbols.symbolAsterisk = {
 Symbols.symbolSquare = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 4 + 1 );                         // +1 accounts for overlap.
+        s = Math.max( 1, Math.round( s * Math.PI / 4 + 0.5 ));          // +0.5 accounts for overlap.
         g.moveTo(  s,  s );
         g.lineTo(  s, -s );
         g.lineTo( -s, -s );
@@ -112,14 +112,14 @@ Symbols.symbolSquare = {
 Symbols.symbolDiamond = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ));
+        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 1 );         // +1 accounts for overlap.
         g.moveTo(  0, -s );
         g.lineTo(  s,  0 );
         g.closePath();
         g.moveTo(  s,  0 );
-        g.lineTo(  0,  s - 1 );
+        g.lineTo(  0,  s );
         g.closePath();
-        g.moveTo(  0,  s - 1 );
+        g.moveTo(  0,  s );
         g.lineTo( -s,  0 );
         g.closePath();
         g.moveTo( -s,  0 );
