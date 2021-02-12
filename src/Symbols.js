@@ -1,5 +1,7 @@
 /**
- * Symbols with preattentive features and approximately equal weight.
+ * Popular symbols with preattentive features.
+ *
+ * Symbols have approximately equal weight, though this can always be tweaked.
  *
  * Symbols are centered at (0,0).  When translating,
  * round to the center of the pixel to minimize anti-aliasing, e.g.
@@ -14,7 +16,7 @@ const Symbols = () => {
 /**
  * Circle.
  */
-Symbols.symbolCircle = {
+Symbols.pSymbolCircle = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI ) + 0.5;                     // +0.5 minimizes anti-aliasing.
         g.arc( 0, 0, s, 0, 2 * Math.PI );
@@ -25,7 +27,7 @@ Symbols.symbolCircle = {
 /**
  * Plus.
  */
-Symbols.symbolPlus = {
+Symbols.pSymbolPlus = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.round( s * Math.PI / 2 - 0.25 );                      // -0.25 accounts for center pixel.
@@ -41,7 +43,7 @@ Symbols.symbolPlus = {
 /**
  * X.
  */
-Symbols.symbolX = {
+Symbols.pSymbolX = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 0.75 );     // +0.75 accounts for center pixel.
@@ -57,7 +59,7 @@ Symbols.symbolX = {
 /**
  * Triangle.
  */
-Symbols.symbolTriangle = {
+Symbols.pSymbolTriangle = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.round( s * Math.PI / 3 + 0.5 );                        // +0.5 accounts for overlap.
@@ -73,7 +75,7 @@ Symbols.symbolTriangle = {
 /**
  * Asterisk.
  */
-Symbols.symbolAsterisk = {
+Symbols.pSymbolAsterisk = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.round( s * Math.PI / 3 + 0.5 );                        // +0.5 accounts for overlap.
@@ -94,7 +96,7 @@ Symbols.symbolAsterisk = {
 /**
  * Square.
  */
-Symbols.symbolSquare = {
+Symbols.pSymbolSquare = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.max( 1, Math.round( s * Math.PI / 4 + 0.5 ));          // +0.5 accounts for overlap.
@@ -109,7 +111,7 @@ Symbols.symbolSquare = {
 /**
  * Diamond.
  */
-Symbols.symbolDiamond = {
+Symbols.pSymbolDiamond = {
     draw: function( g, size ) { if( size > 0 ) {
         let s = Math.sqrt( size / Math.PI );
         s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 1 );         // +1 accounts for overlap.
@@ -129,8 +131,8 @@ Symbols.symbolDiamond = {
 };
 
 /**
- * Preattentive symbol set.
+ * Popular symbol set with preattentive features.
  */
-Symbols.symbols = [ Symbols.symbolCircle, Symbols.symbolPlus, Symbols.symbolX, Symbols.symbolTriangle, Symbols.symbolAsterisk, Symbols.symbolSquare, Symbols.symbolDiamond ];
+Symbols.pSymbols = [ Symbols.pSymbolCircle, Symbols.pSymbolPlus, Symbols.pSymbolX, Symbols.pSymbolTriangle, Symbols.pSymbolAsterisk, Symbols.pSymbolSquare, Symbols.pSymbolDiamond ];
     
 export default Symbols;

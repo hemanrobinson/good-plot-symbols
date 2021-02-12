@@ -87,7 +87,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
         .style( "fill", colorLight );
     
     // Choose the symbol scale.
-    let symbols = ( symbolSet === "geometric" ) ? d3.symbols : Symbols.symbols,
+    let symbols = ( symbolSet === "geometric" ) ? d3.symbols : Symbols.pSymbols,
         symbolScale = d3.scaleOrdinal( data.map( datum => datum[ 0 ]), symbols.map( s => d3.symbol().type( s ).size( size )()));
     
     // Draw the points.
