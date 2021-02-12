@@ -43,10 +43,10 @@ const App = () => {
             </div>
             <div className="Description">
                 <p>
-                Preattentive features are detected quickly, before normal visual processing takes place.  Preattentive features make it easier to find patterns in scatter plots by improving discriminability and reducing overlap.
+                These symbols were chosen for popularity and preattentive features.  Preattentive features make it easier to find patterns, by improving discriminability and reducing overlap.
                 </p>
                 <p>
-                Graphics frameworks often use closed geometric symbols.  The distinction between closed versus open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
+                Preattentive features are detected quickly, before normal visual processing takes place. For example, the distinction between closed versus open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
                 </p>
                 <p className="center">
                     <img alt="Preattentive Symbols" src={symbolsPreattentive} />
