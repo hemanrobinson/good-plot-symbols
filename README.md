@@ -1,6 +1,6 @@
 # Preattentive Plot Symbols
 
-Preattentive features make it easier to find patterns in scatter plots by improving discriminability and reducing overlap.  
+Preattentive symbols improve pattern detection in scatter plots by increasing discriminability and reducing overlap.  
 
 Preattentive features are detected quickly, before normal visual processing takes place.  Preattentive features include closure, line orientation, and terminators.
 
