@@ -1,7 +1,7 @@
 /**
- * Popular symbols with preattentive features.
+ * Popular symbols with preattentive features to improve pattern detection.
  *
- * Symbols have approximately equal weight, though this can always be tweaked.
+ * These symbols have approximately equal weight, though this can always be tweaked.
  *
  * Symbols are centered at (0,0).  When translating,
  * round to the center of the pixel to minimize anti-aliasing, e.g.

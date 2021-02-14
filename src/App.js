@@ -43,10 +43,10 @@ const App = () => {
             </div>
             <div className="Description">
                 <p>
-                Preattentive symbols improve pattern detection in scatter plots by increasing discriminability and reducing overlap.
+                Symbols with preattentive features improve pattern detection by increasing discriminability and reducing overlap.
                 </p>
                 <p>
-                Preattentive features are detected quickly, before normal visual processing takes place. For example, the distinction between closed versus open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
+                Preattentive features are detected quickly, before normal visual processing takes place. For example, the difference between closed and open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
                 </p>
                 <p>
                 <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.
@@ -56,7 +56,7 @@ const App = () => {
                     <img alt="Discriminable Symbols" src={symbolsDiscriminable} />
                 </p>
                 <p>
-                The most discriminable symbols aren't the most popular.  For this symbol set, polling determined the most popular symbols; then <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2019.1637746">usability tests</a> determined the most discriminable among them.
+                The most discriminable symbols aren't the most popular.  For this symbol set, polling determined the most popular symbols; then <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2019.1637746">usability testing</a> found the most discriminable among them.
                 </p>
                 <p className="center">
                     <img alt="Preattentive Symbols" src={symbolsPreattentive} />
