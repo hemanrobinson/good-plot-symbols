@@ -18,7 +18,7 @@ const Symbols = () => {
  */
 Symbols.pSymbolCircle = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI ) + 0.5;                     // +0.5 minimizes anti-aliasing.
+        let s = Math.sqrt( size / Math.PI );                // radius
         g.arc( 0, 0, s, 0, 2 * Math.PI );
         g.closePath();
     }}
@@ -29,8 +29,8 @@ Symbols.pSymbolCircle = {
  */
 Symbols.pSymbolPlus = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 2 - 0.25 );                      // -0.25 accounts for center pixel.
+        let r = Math.sqrt( size / Math.PI );                // radius
+        let s = Math.max( 1.5, r * Math.PI / 2 - 0.25 );    // -0.25 accounts for center pixel.
         g.moveTo( -s,  0 );
         g.lineTo(  s,  0 );
         g.closePath();
@@ -45,13 +45,14 @@ Symbols.pSymbolPlus = {
  */
 Symbols.pSymbolX = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 0.75 );     // +0.75 accounts for center pixel.
-        g.moveTo( -s, -s );
-        g.lineTo(  s,  s );
+        let r = Math.sqrt( size / Math.PI );                // radius
+        let s = r * Math.PI / 2 + 0.25;                     // +0.25 accounts for center pixel and line width.
+        let t = Math.max( 1, s / Math.SQRT2 );
+        g.moveTo( -t, -t );
+        g.lineTo(  t,  t );
         g.closePath();
-        g.moveTo( -s,  s );
-        g.lineTo(  s, -s );
+        g.moveTo( -t,  t );
+        g.lineTo(  t, -t );
         g.closePath();
     }}
 };
@@ -61,10 +62,10 @@ Symbols.pSymbolX = {
  */
 Symbols.pSymbolTriangle = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 3 + 0.5 );                        // +0.5 accounts for overlap.
-        let t = Math.round( s * Math.sin( Math.PI / 6 )),
-            u = Math.round( s * Math.cos( Math.PI / 6 ));
+        let r = Math.sqrt( size / Math.PI );                // radius
+        let s = r * Math.PI / 3 + 0.5;                      // +0.5 accounts for overlap.
+        let t = s * Math.sin( Math.PI / 6 ),
+            u = s * Math.cos( Math.PI / 6 );
         g.moveTo(  0, -s );
         g.lineTo(  u,  t );
         g.lineTo( -u,  t );
@@ -77,10 +78,10 @@ Symbols.pSymbolTriangle = {
  */
 Symbols.pSymbolAsterisk = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / 3 + 0.5 );                        // +0.5 accounts for overlap.
-        let t = Math.round( s * Math.sin( Math.PI / 6 )),
-            u = Math.round( s * Math.cos( Math.PI / 6 ));
+        let r = Math.sqrt( size / Math.PI );                // radius
+        let s = Math.max( 1.5, r * Math.PI / 3 + 0.5 );     // +0.5 accounts for overlap.
+        let t = s * Math.sin( Math.PI / 6 ),
+            u = s * Math.cos( Math.PI / 6 );
         g.moveTo(  0,  s );
         g.lineTo(  0, -s );
         g.closePath();
@@ -98,8 +99,8 @@ Symbols.pSymbolAsterisk = {
  */
 Symbols.pSymbolSquare = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );
-        s = Math.max( 1, Math.round( s * Math.PI / 4 + 0.5 ));          // +0.5 accounts for overlap.
+        let r = Math.sqrt( size / Math.PI );                // radius
+        let s = r * Math.PI / 4 + 0.25;                     // +0.25 accounts for overlap.
         g.moveTo(  s,  s );
         g.lineTo(  s, -s );
         g.lineTo( -s, -s );
@@ -113,19 +114,20 @@ Symbols.pSymbolSquare = {
  */
 Symbols.pSymbolDiamond = {
     draw: function( g, size ) { if( size > 0 ) {
-        let s = Math.sqrt( size / Math.PI );
-        s = Math.round( s * Math.PI / ( 2 * Math.SQRT2 ) + 1 );         // +1 accounts for overlap.
-        g.moveTo(  0, -s );
-        g.lineTo(  s,  0 );
+        let r = Math.sqrt( size / Math.PI );                // radius
+        let s = r * Math.PI / ( 2 * Math.SQRT2 ) + 0.5;     // +0.5 accounts for overlap.
+        let t = 1 / ( 2 * Math.SQRT2 );                     // t accounts for line width.
+        g.moveTo(      -t, - s - t );
+        g.lineTo(   s + t,       t );
         g.closePath();
-        g.moveTo(  s,  0 );
-        g.lineTo(  0,  s );
+        g.moveTo(   s + t,      -t );
+        g.lineTo(      -t,   s + t );
         g.closePath();
-        g.moveTo(  0,  s );
-        g.lineTo( -s,  0 );
+        g.moveTo(       t,   s + t );
+        g.lineTo( - s - t,      -t );
         g.closePath();
-        g.moveTo( -s,  0 );
-        g.lineTo(  0, -s );
+        g.moveTo( - s - t,       t );
+        g.lineTo(       t, - s - t );
         g.closePath();
     }}
 };

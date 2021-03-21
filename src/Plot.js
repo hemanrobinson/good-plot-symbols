@@ -15,7 +15,7 @@ const Plot = ( props ) => {
     // Create reference and scales.
     const padding = 20, marginAxis = 50, marginLegend = 100, height = 400, width = 400;
     let ref = useRef(),
-        { symbolSet, dataSet, size } = props,
+        { symbolSet, dataSet, size, lineWidth, opacity } = props,
         data = Data.getValues( dataSet ),
         scale = ( dataSet === "Business" ) ? d3.scaleLog : d3.scaleLinear,
         xMin = d3.min( data, d => d[ 2 ]),
@@ -29,7 +29,7 @@ const Plot = ( props ) => {
     
     // Set hook to draw on mounting.
     useEffect(() => {
-        Plot.draw( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size );
+        Plot.draw( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size, lineWidth, opacity );
     });
     
     // Return the component.
@@ -50,8 +50,10 @@ const Plot = ( props ) => {
  * @param {string}     symbolSet   one of "geometric", "preattentive"
  * @param {Array}      dataSet     one of "Iris", "Business", "Cytometry"
  * @param {number}     size        size in pixels
+ * @param {number}     lineWidth   line width in pixels
+ * @param {number}     opacity     alpha, between 0 and 1
  */
-Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size ) => {
+Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size, lineWidth, opacity ) => {
     
     // Initialization.
     const svg = d3.select( ref.current ),
@@ -96,7 +98,10 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
         .attr( "d", symbolScale( datum[ 0 ]))
         .attr( "transform", d => "translate( " + ( Math.floor( xScale( datum[ 2 ])) + 0.5 ) + ", " + ( Math.floor( yScale( datum[ 1 ])) + 0.5 ) + " )" )
         .style( "fill", "none" )
-        .style( "stroke", "black" );
+        .style( "stroke", "black" )
+        .style( "stroke-width", lineWidth )
+        .style( "line-join", "miter" )
+        .style( "opacity", opacity );
     });
     
     // Draw the X axis.
@@ -140,7 +145,10 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
             .attr( "d", symbolScale( item ))
             .attr( "transform", "translate( " + ( x - d / 2 ) + ", " + ( y - 3 ) + " )" )
             .style( "fill", "none" )
-            .style( "stroke", "black" );
+            .style( "stroke", "black" )
+            .style( "stroke-width", lineWidth )
+            .style( "line-join", "miter" )
+            .style( "opacity", opacity );
     });
 };
 
