@@ -19,7 +19,7 @@ Data.getColumnNames = (  dataSet ) => {
         case "Business": names = [ "Industry", "Sales ($M)", "Employees" ]; break;
         case "Cytometry": names = [ "Cluster", "Prin 1", "Prin 2" ]; break;
         case "Decathlon": names = [ "Country", "100 Meters", "Long Jump", "High Jump", "100 Meter Hurdles" ]; break;
-        case "Random": names = [ "Y", "X", "Smile" ]; break;
+        case "Random": names = [ "Smile", "Y", "X" ]; break;
         default: names = [ "Species", "Sepal Length (cm)", "Sepal Width (cm)", "Petal Length (cm)", "Petal Width (cm)" ]; break;
     }
     return names;
