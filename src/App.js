@@ -44,13 +44,13 @@ const App = () => {
                     valueLabelDisplay="auto" marks
                     onChangeCommitted={( event, value ) => setLineWidth( value )} />
                 <label>Data Set:</label>
-                <Select value={ dataSet } style={{minWidth: 120, backgroundColor: "#ffffff"}}
+                <Select value={ dataSet } style={{minWidth: 150, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
-                    <MenuItem value="Decathlon">Decathlon</MenuItem>
-                    <MenuItem value="Iris">Iris</MenuItem>
-                    <MenuItem value="Business">Business</MenuItem>
-                    <MenuItem value="Cytometry">Cytometry</MenuItem>
-                    <MenuItem value="Random">Random</MenuItem>
+                    <MenuItem value="Decathlon">(50) Decathlon</MenuItem>
+                    <MenuItem value="Business">(88) Business</MenuItem>
+                    <MenuItem value="Iris">(150) Iris</MenuItem>
+                    <MenuItem value="Cytometry">(500) Cytometry</MenuItem>
+                    <MenuItem value="Random">(4980) Random</MenuItem>
                 </Select>
             </div>
             <div className="Description">
