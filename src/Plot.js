@@ -95,14 +95,16 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     
     // Draw the points.
     data.forEach(( datum ) => {
-        svg.append( "path" )
-        .attr( "d", symbolScale( datum[ 0 ]))
-        .attr( "transform", d => "translate( " + ( Math.floor( xScale( datum[ 2 ])) + 0.5 ) + ", " + ( Math.floor( yScale( datum[ 1 ])) + 0.5 ) + " )" )
-        .style( "fill", isFilled ? "black" : "none" )
-        .style( "stroke", "black" )
-        .style( "stroke-width", isFilled && ( lineWidth > 1 ) ? 4 * lineWidth : lineWidth )
-        .style( "line-join", "miter" )
-        .style( "opacity", opacity );
+        if(( datum[ 1 ] !== null ) && ( datum[ 2 ] !== null )) {
+            svg.append( "path" )
+            .attr( "d", symbolScale( datum[ 0 ]))
+            .attr( "transform", d => "translate( " + ( Math.floor( xScale( datum[ 2 ])) + 0.5 ) + ", " + ( Math.floor( yScale( datum[ 1 ])) + 0.5 ) + " )" )
+            .style( "fill", isFilled ? "black" : "none" )
+            .style( "stroke", "black" )
+            .style( "stroke-width", isFilled && ( lineWidth > 1 ) ? 4 * lineWidth : lineWidth )
+            .style( "line-join", "miter" )
+            .style( "opacity", opacity );
+        }
     });
     
     // Draw the X axis.

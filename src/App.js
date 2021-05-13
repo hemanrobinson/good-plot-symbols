@@ -50,6 +50,7 @@ const App = () => {
                     <MenuItem value="Cherts">Cherts</MenuItem>
                     <MenuItem value="Cytometry">Cytometry</MenuItem>
                     <MenuItem value="Decathlon">Decathlon</MenuItem>
+                    <MenuItem value="Random">Random</MenuItem>
                     <MenuItem value="Iris">Iris</MenuItem>
                 </Select>
             </div>
