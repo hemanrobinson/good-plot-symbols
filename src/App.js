@@ -14,7 +14,7 @@ const App = () => {
     const [ size, setSize ] = useState( 100 );
     const [ opacity, setOpacity ] = useState( 1 );
     const [ lineWidth, setLineWidth ] = useState( 1 );
-    const [ dataSet, setDataSet ] = useState( "Iris" );
+    const [ dataSet, setDataSet ] = useState( "Decathlon" );
     
     // Return the component.
     return (
@@ -46,11 +46,11 @@ const App = () => {
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 120, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
+                    <MenuItem value="Decathlon">Decathlon</MenuItem>
+                    <MenuItem value="Iris">Iris</MenuItem>
                     <MenuItem value="Business">Business</MenuItem>
                     <MenuItem value="Cytometry">Cytometry</MenuItem>
-                    <MenuItem value="Decathlon">Decathlon</MenuItem>
                     <MenuItem value="Random">Random</MenuItem>
-                    <MenuItem value="Iris">Iris</MenuItem>
                 </Select>
             </div>
             <div className="Description">
