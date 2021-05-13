@@ -13,9 +13,9 @@ import './Plot.css';
 const Plot = ( props ) => {
     
     // Create reference and scales.
-    const padding = 20, marginAxis = 50, marginLegend = 100, height = 400, width = 400;
+    const padding = 20, marginAxis = 50, marginLegend = 100, height = 300, width = 300;
     let ref = useRef(),
-        { symbolSet, dataSet, size, lineWidth, opacity } = props,
+        { symbolSet, dataSet, size, lineWidth, opacity, isFilled } = props,
         data = Data.getValues( dataSet ),
         scale = ( dataSet === "Business" ) ? d3.scaleLog : d3.scaleLinear,
         xMin = d3.min( data, d => d[ 2 ]),
@@ -29,7 +29,7 @@ const Plot = ( props ) => {
     
     // Set hook to draw on mounting.
     useEffect(() => {
-        Plot.draw( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size, lineWidth, opacity );
+        Plot.draw( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size, lineWidth, opacity, isFilled );
     });
     
     // Return the component.
@@ -52,8 +52,9 @@ const Plot = ( props ) => {
  * @param {number}     size        size in pixels
  * @param {number}     lineWidth   line width in pixels
  * @param {number}     opacity     alpha, between 0 and 1
+ * @param {boolean}    isFilled    true iff filled, false otherwise
  */
-Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size, lineWidth, opacity ) => {
+Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, yScale, symbolSet, dataSet, size, lineWidth, opacity, isFilled ) => {
     
     // Initialization.
     const svg = d3.select( ref.current ),
@@ -97,9 +98,9 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
         svg.append( "path" )
         .attr( "d", symbolScale( datum[ 0 ]))
         .attr( "transform", d => "translate( " + ( Math.floor( xScale( datum[ 2 ])) + 0.5 ) + ", " + ( Math.floor( yScale( datum[ 1 ])) + 0.5 ) + " )" )
-        .style( "fill", "none" )
+        .style( "fill", isFilled ? "black" : "none" )
         .style( "stroke", "black" )
-        .style( "stroke-width", lineWidth )
+        .style( "stroke-width", isFilled && ( lineWidth > 1 ) ? 4 * lineWidth : lineWidth )
         .style( "line-join", "miter" )
         .style( "opacity", opacity );
     });
@@ -108,7 +109,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     svg.append( "g" )
         .attr( "class", "axis" )
         .attr( "transform", "translate( 0, " + ( height - marginAxis ) + " )" )
-        .call( d3.axisBottom( xScale ).ticks( 2.5 ).tickFormat(( x ) => (( dataSet === "Business" ) ? x.toFixed( 0 ) : x )));
+        .call( d3.axisBottom( xScale ).tickSizeOuter( 0 ).ticks( 2.5 ).tickFormat(( x ) => (( dataSet === "Business" ) ? x.toFixed( 0 ) : x )));
     svg.append( "text" )
         .attr( "transform", "translate( " + ( width / 2 ) + " ," + ( height - padding / 2 ) + ")" )
         .style( "text-anchor", "middle" )
@@ -118,7 +119,7 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
     svg.append( "g" )
         .attr( "class", "axis" )
         .attr( "transform", "translate( " + marginAxis + ", 0 )" )
-        .call( d3.axisLeft( yScale ).ticks(( dataSet === "Business" ) ? 2 : 3 ).tickFormat(( x ) => (( dataSet === "Business" ) ? x.toFixed( 0 ) : x )));
+        .call( d3.axisLeft( yScale ).tickSizeOuter( 0 ).ticks(( dataSet === "Business" ) ? 2 : 3 ).tickFormat(( x ) => (( dataSet === "Business" ) ? x.toFixed( 0 ) : x )));
     svg.append( "text" )
         .attr( "transform", "rotate( -90 )" )
         .attr( "x", -height / 2 )
@@ -144,9 +145,9 @@ Plot.draw = ( width, height, marginAxis, marginLegend, padding, ref, xScale, ySc
         svg.append( "path" )
             .attr( "d", symbolScale( item ))
             .attr( "transform", "translate( " + ( x - d / 2 ) + ", " + ( y - 3 ) + " )" )
-            .style( "fill", "none" )
+            .style( "fill", isFilled ? "black" : "none" )
             .style( "stroke", "black" )
-            .style( "stroke-width", lineWidth )
+            .style( "stroke-width", isFilled && ( lineWidth > 1 ) ? 4 * lineWidth : lineWidth )
             .style( "line-join", "miter" )
             .style( "opacity", opacity );
     });

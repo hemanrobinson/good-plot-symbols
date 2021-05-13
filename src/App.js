@@ -12,8 +12,8 @@ const App = () => {
     
     // Create state.
     const [ size, setSize ] = useState( 100 );
+    const [ opacity, setOpacity ] = useState( 1 );
     const [ lineWidth, setLineWidth ] = useState( 1 );
-    const [ opacity, setOpacity ] = useState( 0.5 );
     const [ dataSet, setDataSet ] = useState( "Iris" );
     
     // Return the component.
@@ -23,9 +23,11 @@ const App = () => {
                 <h1>Preattentive Plot Symbols</h1>
             </div>
             <div className="GridPlots">
-                <label>Geometric Symbols</label>
+                <label>Filled Symbols</label>
+                <label>Unfilled Symbols</label>
                 <label>Preattentive Symbols</label>
-                <Plot symbolSet={"geometric"}    dataSet={dataSet} size={size} lineWidth={lineWidth} opacity={opacity} />
+                <Plot symbolSet={"geometric"}    dataSet={dataSet} size={size} lineWidth={lineWidth} opacity={opacity} isFilled={true} />
+                <Plot symbolSet={"geometric"}    dataSet={dataSet} size={size} lineWidth={lineWidth} opacity={opacity} isFilled={false} />
                 <Plot symbolSet={"preattentive"} dataSet={dataSet} size={size} lineWidth={lineWidth} opacity={opacity} />
             </div>
             <div className="GridControls">
@@ -33,14 +35,14 @@ const App = () => {
                 <Slider defaultValue={ 10 } step={ 1 } min={ 1 } max={ 20 }
                     valueLabelDisplay="auto" marks valueLabelFormat={( value ) => value * value }
                     onChangeCommitted={( event, value ) => setSize( value * value )} />
-                <label>Line Width:</label>
+                <label>Transparency:</label>
+                <Slider defaultValue={ 0 } step={ 0.01 } min={ 0 } max={ 1 }
+                    valueLabelDisplay="auto"
+                    onChangeCommitted={( event, value ) => setOpacity( 1 - value )} />
+                <label>Highlight:</label>
                 <Slider defaultValue={ 1 } step={ 1 } min={ 1 } max={ 2 }
                     valueLabelDisplay="auto" marks
                     onChangeCommitted={( event, value ) => setLineWidth( value )} />
-                <label>Transparency:</label>
-                <Slider defaultValue={ 0.5 } step={ 0.01 } min={ 0 } max={ 1 }
-                    valueLabelDisplay="auto"
-                    onChangeCommitted={( event, value ) => setOpacity( 1 - value )} />
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 120, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>

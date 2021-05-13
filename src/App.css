@@ -17,9 +17,10 @@ p.center {
 }
 .GridPlots {
     display: grid;
-    grid-template-columns: repeat( 2, 1fr );
+    grid-template-columns: repeat( 3, 1fr );
     justify-items: center;
     margin: 0 auto;
+    padding: 5px 0;
 }
 .GridControls {
     display: grid;
@@ -27,4 +28,5 @@ p.center {
     align-items: center;
     justify-items: right;
     justify-content: center;
+    padding: 5px 0;
 }
