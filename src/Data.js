@@ -17,7 +17,6 @@ Data.getColumnNames = (  dataSet ) => {
     let names = [];
     switch( dataSet ) {
         case "Business": names = [ "Industry", "Sales ($M)", "Employees" ]; break;
-        case "Cherts": names = [ "Location", "Aluminum", "Bromine", "Chromium", "Caesium" ]; break;
         case "Cytometry": names = [ "Cluster", "Prin 1", "Prin 2" ]; break;
         case "Decathlon": names = [ "Country", "100 Meters", "Long Jump", "High Jump", "100 Meter Hurdles" ]; break;
         case "Random": names = [ "Y", "X", "Smile" ]; break;
@@ -128,54 +127,6 @@ Data.getValues = ( dataSet ) => {
             [ "Soap", 594.4, 5721 ],
             [ "Soap", 576.9, 4000 ]
        ]; break;
-        
-        // Cherts, with location and chemical composition.  Subset of Cherts, from JMP(r) software (http://www.jmp.com).
-        case "Cherts": data = [
-            [ "Gran Grae", 2734.36, 1.26, 14.41, 0.23 ],
-            [ "Gran Grae", 2615.38, 0.55, 7.98, 0.14 ],
-            [ "Gran Grae", 3021.69, 0.55, 5.76, 0.13 ],
-            [ "Gran Grae", 3551.01, 1.29, 13.94, 0.26 ],
-            [ "Gran Grae", 3252.02, 1.18, 9.54, 0.21 ],
-            [ "Gran Grae", 3216.45, 0.64, 11.28, 0.14 ],
-            [ "Gran Grae", 3207.59, 1.28, 11.95, 0.26 ],
-            [ "Lake City", 1929.62, 0.67, 13.02, 0.2 ],
-            [ "Lake City", 3256.24, 0.41, 6.11, 0.13 ],
-            [ "Lake City", 2064, 1.03, 15.78, 0.23 ],
-            [ "Lake City", 3299.43, 1.54, 7.82, 0.08 ],
-            [ "Le Sueur", 3107.32, 0.6, 5.2, 0.09 ],
-            [ "Le Sueur", 1945.35, 0.98, 6.55, 0.11 ],
-            [ "Le Sueur", 2810.29, 0.89, 7.36, 0.2 ],
-            [ "Le Sueur", 2272.22, 0.81, 7.65, 0.12 ],
-            [ "Le Sueur", 2636.07, 0.84, 7.36, 0.15 ],
-            [ "Le Sueur", 2596.22, 0.9, 7.43, 0.11 ],
-            [ "Rushford", 3284.46, 0.91, 15.46, 0.15 ],
-            [ "Rushford", 4464.57, 1.02, 12.73, 0.18 ],
-            [ "Rushford", 3732.06, 0.51, 13.05, 0.19 ],
-            [ "Rushford", 4586.34, 0.59, 9.73, 0.12 ],
-            [ "Rushford", 4019.08, 0.52, 13.14, 0.09 ],
-            [ "Rushford", 3255.09, 0.62, 13.23, 0.25 ],
-            [ "Shakopee", 2394.79, 1.41, 5.27, 0.07 ],
-            [ "Shakopee", 2461.7, 1.5, 4.33, 0.08 ],
-            [ "Shakopee", 2441.22, 1.07, 9.66, 0.11 ],
-            [ "Shakopee", 2247.79, 1.29, 9.15, 0.09 ],
-            [ "Shakopee", 1889.42, 1.28, 4.34, 0.05 ],
-            [ "Shakopee", 1819.92, 1.2, 7.57, 0.14 ],
-            [ "Shakopee", 1826.5, 1.01, 6.34, 0.05 ],
-            [ "Shakopee", 2243.53, 1.45, 9.78, 0.19 ],
-            [ "Shakopee", 2351.21, 1.24, 5.95, 0.08 ],
-            [ "Treasure Island", 2546.81, 0.51, 12.61, 0.19 ],
-            [ "Treasure Island", 2899.4, 0.65, 8.24, 0.1 ],
-            [ "Treasure Island", 3158.71, 0.53, 11.8, 0.14 ],
-            [ "Treasure Island", 3015.99, 0.6, 11.87, 0.1 ],
-            [ "Treasure Island", 3052.38, 0.45, 12.2, 0.18 ],
-            [ "Elmwood", 2798.13, 0.99, 9.16, 0.16 ],
-            [ "Elmwood", 2826.09, 0.6, 9.5, 0.17 ],
-            [ "Elmwood", 3969.37, 0.66, 9.1, 0.15 ],
-            [ "Elmwood", 3160.3, 0.65, 9.36, 0.19 ],
-            [ "Elmwood", 3147.88, 0.74, 9.37, 0.15 ],
-            [ "Elmwood", 2875.58, 1.09, 12.58, 0.21 ],
-            [ "Elmwood", 2778.23, 0.8, 9.33, 0.18 ]
-        ]; break;
         
         // Cell metrics, with clustering and principal components.  Subset of Cytometry, from JMP(r) software (http://www.jmp.com).
         case "Cytometry": data = [
