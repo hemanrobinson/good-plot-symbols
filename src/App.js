@@ -47,7 +47,7 @@ const App = () => {
                 <Select value={ dataSet } style={{minWidth: 150, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Decathlon">(50) Decathlon</MenuItem>
-                    <MenuItem value="Business">(88) Business</MenuItem>
+                    <MenuItem value="Business">(67) Business</MenuItem>
                     <MenuItem value="Iris">(150) Iris</MenuItem>
                     <MenuItem value="Cytometry">(500) Cytometry</MenuItem>
                     <MenuItem value="Random">(4980) Random</MenuItem>
