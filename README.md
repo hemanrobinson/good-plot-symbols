@@ -1,6 +1,6 @@
 # Preattentive Plot Symbols
 
-Symbols with preattentive features improve pattern detection by increasing discriminability and reducing overlap.  
+Symbols with preattentive features improve pattern detection in plots by increasing discriminability and reducing overlap.  These symbols have been [contributed to d3](https://github.com/d3/d3-shape/releases).
 
 Preattentive features are detected quickly, before normal visual processing takes place.  Preattentive features include closure, line orientation, and terminators.
 
