@@ -20,7 +20,7 @@ const App = () => {
     return (
         <div className="Column">
             <div className="Description">
-                <h1>Preattentive Plot Symbols</h1>
+                <h1>Preattentive Symbols</h1>
             </div>
             <div className="GridPlots">
                 <label>Filled Symbols</label>
@@ -57,6 +57,9 @@ const App = () => {
                 <p>
                 Symbols with preattentive features improve pattern detection in plots by increasing discriminability and reducing overlap.  These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3.</a>
                 </p>
+            </div>
+            <div className="Description">
+                <h2>About This User Interface</h2>
                 <p>
                 Preattentive features are detected quickly, before normal visual processing takes place. For example, the difference between closed and open symbols is detected preattentively.  Other preattentive features include line orientation and terminators.
                 </p>
