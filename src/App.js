@@ -40,7 +40,7 @@ const App = () => {
                     valueLabelDisplay="auto"
                     onChangeCommitted={( event, value ) => setOpacity( 1 - value )} />
                 <label>Stroke Width:</label>
-                <Slider defaultValue={ 1 } step={ 1 } min={ 1 } max={ 4 }
+                <Slider defaultValue={ 1 } step={ 0.05 } min={ .1 } max={ 4 }
                     valueLabelDisplay="auto" marks
                     onChangeCommitted={( event, value ) => setLineWidth( value )} />
                 <label>Data Set:</label>
