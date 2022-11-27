@@ -39,8 +39,8 @@ const App = () => {
                 <Slider defaultValue={ 0 } step={ 0.01 } min={ 0 } max={ 1 }
                     valueLabelDisplay="auto"
                     onChangeCommitted={( event, value ) => setOpacity( 1 - value )} />
-                <label>Highlight:</label>
-                <Slider defaultValue={ 1 } step={ 1 } min={ 1 } max={ 2 }
+                <label>Stroke Width:</label>
+                <Slider defaultValue={ 1 } step={ 1 } min={ 1 } max={ 4 }
                     valueLabelDisplay="auto" marks
                     onChangeCommitted={( event, value ) => setLineWidth( value )} />
                 <label>Data Set:</label>
@@ -75,13 +75,10 @@ const App = () => {
                 Dr. Treisman showed that our brains perform visual processing in two stages. Some features are perceived only when we pay attention. Other features, including line length, orientation, and number of terminations, are perceived pre-attentively -- before normal visual processing takes place.
                 </p>
                 <p>
-                <a href="https://www.stat.purdue.edu/~wsc/">Dr. William S. Cleveland</a> used the work of the cognitive psychologists to improve plot symbols. The preattentive features make patterns clearer and reduce overlap between symbols.
+                <a href="https://www.stat.purdue.edu/~wsc/">Dr. William S. Cleveland</a> used the work of the cognitive psychologists to improve plot symbols. The preattentive features clarify patterns and reduce overlap between symbols.  At the top of this page, the scatter plot on the right extends Dr. Cleveland's work.
                 </p>
                 <p>
-                At the top of this page, the scatter plot on the right extends Dr. Cleveland's work. A study found statistically significant differences in perception times for up to six symbols.
-                </p>
-                <p>
-                The study's goal was to identify the most discriminable symbols for any number of categories. As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
+                A study found statistically significant differences in perception times for up to six symbols.  The study's goal was to identify the most discriminable symbols for any number of categories. As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
                 </p>
                 <p>
                 <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.
