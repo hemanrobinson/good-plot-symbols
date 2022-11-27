@@ -3,6 +3,9 @@ div {
     text-align: center;
     gap: 10px;
 }
+img {
+  border: 1px solid #999999;
+}
 p.center {
     text-align: center;
 }
@@ -17,7 +20,7 @@ p.center {
 }
 .GridPlots {
     display: grid;
-    grid-template-columns: repeat( 3, 1fr );
+    grid-template-columns: repeat( 2, 1fr );
     justify-items: center;
     margin: 0 auto;
     padding: 5px 0;

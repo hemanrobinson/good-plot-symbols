@@ -33,5 +33,5 @@ it( "renders App with childnodes", () => {
     expect( controls.childNodes[ 0 ].nodeName ).toBe( "LABEL" );
     expect( controls.childNodes[ 1 ].nodeName ).toBe( "SPAN" );
     expect( controls.childNodes[ 2 ].nodeName ).toBe( "LABEL" );
-    expect( controls.childNodes[ 3 ].nodeName ).toBe( "DIV" );
+    expect( controls.childNodes[ 3 ].nodeName ).toBe( "SPAN" );
 });
