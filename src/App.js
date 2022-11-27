@@ -33,15 +33,15 @@ const App = () => {
             <div className="GridControls">
                 <label>Size:</label>
                 <Slider defaultValue={ 10 } step={ 1 } min={ 1 } max={ 20 }
-                    valueLabelDisplay="auto" marks valueLabelFormat={( value ) => value * value }
+                    valueLabelDisplay="auto" valueLabelFormat={( value ) => value * value }
                     onChangeCommitted={( event, value ) => setSize( value * value )} />
                 <label>Transparency:</label>
                 <Slider defaultValue={ 0 } step={ 0.01 } min={ 0 } max={ 1 }
                     valueLabelDisplay="auto"
                     onChangeCommitted={( event, value ) => setOpacity( 1 - value )} />
                 <label>Stroke Width:</label>
-                <Slider defaultValue={ 1 } step={ 0.05 } min={ .1 } max={ 4 }
-                    valueLabelDisplay="auto" marks
+                <Slider defaultValue={ 1 } step={ 0.05 } min={ 0.1 } max={ 4 }
+                    valueLabelDisplay="auto"
                     onChangeCommitted={( event, value ) => setLineWidth( value )} />
                 <label>Data Set:</label>
                 <Select value={ dataSet } style={{minWidth: 150, backgroundColor: "#ffffff"}}
