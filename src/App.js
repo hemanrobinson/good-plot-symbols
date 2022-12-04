@@ -22,7 +22,7 @@ const App = () => {
     return (
         <div className="Column">
             <div className="Description">
-                <h1>Better Symbols</h1>
+                <h1>Better Plotting</h1>
             </div>
             <div className="GridPlots">
                 <label>Geometric Symbols</label>
