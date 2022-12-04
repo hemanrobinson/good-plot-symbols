@@ -22,10 +22,10 @@ const App = () => {
     return (
         <div className="Column">
             <div className="Description">
-                <h1>Preattentive Symbols</h1>
+                <h1>Better Symbols</h1>
             </div>
             <div className="GridPlots">
-                <label>Unfilled Symbols</label>
+                <label>Geometric Symbols</label>
                 <label>Preattentive Symbols</label>
                 <Plot symbolSet={"geometric"}    dataSet={dataSet} size={size} lineWidth={lineWidth} opacity={opacity} isFilled={false} />
                 <Plot symbolSet={"preattentive"} dataSet={dataSet} size={size} lineWidth={lineWidth} opacity={opacity} />

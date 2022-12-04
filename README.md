@@ -1,4 +1,4 @@
-# Preattentive Plot Symbols
+# Better Symbols
 
 Symbols with preattentive features improve pattern detection in plots by increasing discriminability and reducing overlap.  These symbols have been [contributed to d3](https://github.com/d3/d3-shape/releases).
 
