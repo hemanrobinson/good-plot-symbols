@@ -54,7 +54,7 @@ const App = () => {
                 </Select>
             </div>
             <div className="Description">
-                <h2>About This User Interface</h2>
+                <h2>About this Design</h2>
                 <p>
                 This is Dr. Anne Treisman, receiving the National Science Award. At the end of a great career, you want a big hunk of metal, and she got hers.
                 </p>
