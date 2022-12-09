@@ -23,6 +23,9 @@ const App = () => {
         <div className="Column">
             <div className="Description">
                 <h1>Better Plotting</h1>
+                <p>
+                Carefully chosen plot symbols improve our ability to find patterns in our data.  Use the controls below to try different symbols for plotting.
+                </p>
             </div>
             <div className="GridPlots">
                 <label>Geometric Symbols</label>
