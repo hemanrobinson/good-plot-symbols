@@ -7,9 +7,7 @@ import test from './test.png';
 import symbolsPreattentive from './symbolsPreattentive.png';
 import symbolsDiscriminable from './symbolsDiscriminable.png';
 
-/**
- * Side-by-side scatter plots.
- */
+// Application:  Preattentive Plotting
 const App = () => {
     
     // Create state.
@@ -22,7 +20,7 @@ const App = () => {
     return (
         <div className="Column">
             <div className="Description">
-                <h1>Better Plotting</h1>
+                <h1>Preattentive Plotting</h1>
                 <p>
                 Carefully chosen plot symbols improve our ability to find patterns in our data.  Use the controls below to try different symbols for plotting.
                 </p>
