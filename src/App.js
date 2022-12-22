@@ -3,6 +3,7 @@ import { Slider, Select, MenuItem } from '@material-ui/core';
 import Plot from './Plot';
 import './App.css';
 import treisman from './treisman.png';
+import cleveland from './cleveland.png';
 import test from './test.png';
 import symbolsPreattentive from './symbolsPreattentive.png';
 import symbolsDiscriminable from './symbolsDiscriminable.png';
@@ -57,11 +58,11 @@ const App = () => {
             <div className="Description">
                 <h2>About this Design</h2>
                 <p>
-                This is Anne Treisman, receiving the National Science Award. At the end of a great career, you want a big hunk of metal, and she got hers.
+                This is <a href="https://nationalmedals.org/laureate/anne-treisman/">Anne Treisman</a>, receiving the National Science Award. At the end of a distinguished career, you want a big hunk of metal, and she got hers.
                 </p>
-                <p className="center" style={{fontSize: 'small'}}>
-                <img alt="Dr. Anne Treisman" src={treisman} /><br />
-                Source: <a href="https://nationalmedals.org/laureate/anne-treisman/">National Science and Technology Medals Foundation</a>
+                <p className="center">
+                    <a href="https://nationalmedals.org/laureate/anne-treisman/"><img alt="Dr. Anne Treisman" src={treisman} /></a>
+                    <br />
                 </p>
                 <p>
                 Dr. Treisman and other cognitive psychologists studied figures like the one below.
@@ -76,7 +77,11 @@ const App = () => {
                 Dr. Treisman showed that our brains perform visual processing in two stages. Some features are perceived only when we pay attention. Other features, including line length, orientation, and number of terminations, are perceived pre-attentively -- before normal visual processing takes place.
                 </p>
                 <p>
-                <a href="https://www.stat.purdue.edu/~wsc/">Dr. William S. Cleveland</a> used the work of the cognitive psychologists to improve plot symbols. The preattentive features clarify patterns and reduce overlap between symbols.  At the top of this page, the scatter plot on the right extends  Cleveland's work.
+                <p className="center">
+                    <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709"><img alt="Dr. William Cleveland" src={cleveland} /></a>
+                    <br />
+                </p>
+                <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709">William Cleveland</a> used the work of the cognitive psychologists to improve plot symbols. The preattentive features clarify patterns and reduce overlap between symbols.  At the top of this page, the scatter plot on the right extends Dr. Cleveland's work.
                 </p>
                 <p>
                 A study found statistically significant differences in perception times for up to six symbols.  The study's goal was to identify the most discriminable symbols for any number of categories. As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
