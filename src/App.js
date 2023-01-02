@@ -23,7 +23,7 @@ const App = () => {
             <div className="Description">
                 <h1>Preattentive Plotting</h1>
                 <p>
-                Carefully chosen plot symbols improve our ability to find patterns in our data.  Use the controls below to try different symbols for plotting.
+                Carefully chosen plot symbols improve our ability to find patterns in our data.  Use the controls below to explore symbols for plotting.
                 </p>
             </div>
             <div className="GridPlots">
@@ -56,7 +56,7 @@ const App = () => {
                 </Select>
             </div>
             <div className="Description">
-                <h2>About this Design</h2>
+                <h2>Design Notes</h2>
                 <p>
                 This is <a href="https://nationalmedals.org/laureate/anne-treisman/">Anne Treisman</a>, receiving the National Science Award. At the end of a distinguished career, you want a big hunk of metal, and she got hers.
                 </p>
