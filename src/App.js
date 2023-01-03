@@ -58,7 +58,7 @@ const App = () => {
             <div className="Description">
                 <h2>Design Notes</h2>
                 <p>
-                This is <a href="https://nationalmedals.org/laureate/anne-treisman/">Anne Treisman</a>, receiving the National Science Award. At the end of a distinguished career, you want a big hunk of metal, and she got hers.
+                This is <a href="https://nationalmedals.org/laureate/anne-treisman/">Anne Treisman</a>, receiving the National Science Award. At the end of a great career, you want a big hunk of metal, and she got hers.
                 </p>
                 <p className="center">
                     <a href="https://nationalmedals.org/laureate/anne-treisman/"><img alt="Dr. Anne Treisman" src={treisman} /></a>
