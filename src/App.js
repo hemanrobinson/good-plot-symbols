@@ -23,7 +23,7 @@ const App = () => {
             <div className="Description">
                 <h1>Preattentive Plotting</h1>
                 <p>
-                Carefully chosen plot symbols improve our ability to find patterns in our data.  Use the controls below to explore symbols for plotting.
+                Plot symbols with preattentive features improve our ability to detect patterns in data.  Use the controls below to explore symbols for plotting.
                 </p>
             </div>
             <div className="GridPlots">
