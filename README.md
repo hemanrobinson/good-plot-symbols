@@ -4,7 +4,7 @@ Symbols with preattentive features improve pattern detection in plots by increas
 
 Preattentive features are detected quickly, before normal visual processing takes place.  Preattentive features include closure, line orientation, and terminators.
 
-[This project demonstrates popular symbols with preattentive features to improve pattern detection.](https://hemanrobinson.github.io/preattentive/)
+[This project demonstrates plot symbols with preattentive features to improve pattern detection.](https://hemanrobinson.github.io/preattentive/)
 
 [![Preattentive Symbols](src/symbolsPreattentive.png)](https://hemanrobinson.github.io/preattentive/)
 
