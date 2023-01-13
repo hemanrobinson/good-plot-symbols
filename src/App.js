@@ -23,7 +23,7 @@ const App = () => {
             <div className="Description">
                 <h1>Preattentive Plotting</h1>
                 <p>
-                Carefully chosen plot symbols improve our ability to find patterns in our data.  Use the controls below to explore symbols for plotting.
+                Carefully chosen plot symbols improve our ability to find patterns in data.  Use the controls below to explore symbols for plotting.
                 </p>
             </div>
             <div className="GridPlots">
@@ -105,7 +105,7 @@ const App = () => {
                 As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
                 </p>
                 <p>
-                The symbols are equally weighted by pixel count, so that no category dominates the plot.
+                The symbols are equally weighted by pixel count, so that no category biases the plot.
                 </p>
                 <p>
                 These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>:
