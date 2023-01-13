@@ -71,43 +71,61 @@ const App = () => {
                     <img alt="Test" src={test} />
                 </p>
                 <p>
-                They wondered: why do most people perceive the asterisks, on the right, more quickly than the down-pointing triangles, on the left?
+                They wondered: why do most people perceive the asterisks, on the right, more quickly than the down-pointing triangles, on the left?  All three figures are composed of the same three lines, at the same angles.
                 </p>
                 <p>
-                Dr. Treisman showed that our brains perform visual processing in two stages. Some features are perceived only when we pay attention. Other features, including line length, orientation, and number of terminations, are perceived pre-attentively -- before normal visual processing takes place.
+                Dr. Treisman showed that our brains perform visual processing in two stages. Some features are perceived only when we pay attention. Other features, including line length, orientation, and number of terminations, are perceived <i>pre-attentively</i> -- before normal visual processing takes place (Treisman, 1985).
                 </p>
                 <p>
+                The preattentive literature has many contributors, including (Beck, Prazdny, and Rosenfeld, 1983), (Healey, Booth, and Enns, 1996), (Julesz and Bergen, 1983), (Krose, 1987), (Malik and Perona, 1990), (Triesman and Gormican, 1988) (Wolfe and Friedman-Hill, 1992).  Dr. Christopher Healey provides a detailed <a href="https://www.csc2.ncsu.edu/faculty/healey/PP/index.html">bibliography with examples</a> (Healey and Enns, 2012).
+                </p>
                 <p className="center">
                     <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709"><img alt="Dr. William Cleveland" src={cleveland} /></a>
                     <br />
                 </p>
-                <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709">William Cleveland</a> used the work of the cognitive psychologists to improve plot symbols. The preattentive features clarify patterns and reduce overlap between symbols.  At the top of this page, the scatter plot on the right extends Dr. Cleveland's work.
+                <p>
+                Statisticians, of course, have long been interested in plot symbols. <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709">William Cleveland</a> used the work of the psychologists to improve pattern detection in plots.  At the top of this page, the scatter plot on the right extends Dr. Cleveland's work.
                 </p>
                 <p>
-                A study found statistically significant differences in perception times for up to six symbols.  The study's goal was to identify the most discriminable symbols for any number of categories. As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
-                </p>
-                <p>
-                <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Wilkinson</a> suggested the Circle, Plus, and X symbols.
-                The Circle is considered the best symbol when data have only one category, because it minimizes interference between points.
+                <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Jacques Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Leland Wilkinson</a> suggested the Circle, Plus, and X symbols.  The Circle is considered the best symbol when data have only one category, because it minimizes overlap.
                 </p>
                 <p className="center">
                     <img alt="Discriminable Symbols" src={symbolsDiscriminable} />
                 </p>
                 <p>
-                The most discriminable symbols aren't the most popular.  For this symbol set, polling determined the most popular symbols; then <a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2019.1637746">usability testing</a> found the most discriminable among them.  These symbols are equally weighted by pixel count, so that no one category dominates the plot.
+                The most discriminable symbols are not the most popular.  Of the symbols above, the circle, plus, and X are used frequently; the others only rarely.
+                </p>
+                <p>
+                For this reason, a study was conducted to find plot symbols that are both popular and disciminable. Polling determined the most popular symbols; then usability testing found the most discriminable among them (Robinson, 2019).
+                </p>
+                <p>
+                The study found statistically significant differences in perception times for up to six symbols.
+                </p>
+                <p>
+                As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
+                </p>
+                <p>
+                The symbols are equally weighted by pixel count, so that no category dominates the plot.
+                </p>
+                <p>
+                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>:
                 </p>
                 <p className="center">
                     <img alt="Preattentive Symbols" src={symbolsPreattentive} />
                 </p>
-                <p>
-                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3.</a>
-                </p>
                 <br/>
                 <h2>References</h2>
                 <ul>
-                    <li><a href="https://infovis-wiki.net/wiki/Preattentive_processing">Infovis Wiki</a><br/>Great overview of preattentive processing.</li>
-                    <li><a href="https://www.csc2.ncsu.edu/faculty/healey/PP/index.html">Dr. Christopher Healey's Examples</a><br/>Explanations of visual perception with interactive examples.</li>
-                    <li><a href="https://www.tandfonline.com/doi/abs/10.1080/10618600.2019.1637746">Good Plot Symbols by Default</a><br/>Study that identified this symbol set.</li>
+                    <li>Beck, J., Prazdny, K., and Rosenfeld, A. (1983). "A Theory of Textural Segmentation". In Human and Machine Vision, eds. J. Beck, B. Hope, A. Rosenfeld, NY: Academic Press, 1-38. <a href="https://doi.org/10.1016/B978-0-12-084320-6.50007-4">https://doi.org/10.1016/B978-0-12-084320-6.50007-4</a>.</li><br/>
+                    <li>Healey, C. and Enns, J. (2012). "Attention and Visual Memory in Visualization and Computer Graphics". IEEE Transactions on Visualization and Computer Graphics, 18, (7). <a href="https://www.csc2.ncsu.edu/faculty/healey/download/tvcg.12a.pdf">https://www.csc2.ncsu.edu/faculty/healey/download/tvcg.12a.pdf</a>.</li><br/>
+                    <li>Healey, C., Booth, K., and Enns, J. (1996). "High-Speed Visual Estimation Using Preattentive Processing". ACM Transactions on Computer-Human Interaction 3 (2), 107-135. <a href="https://www.csc2.ncsu.edu/faculty/healey/download/tochi.96.pdf">https://www.csc2.ncsu.edu/faculty/healey/download/tochi.96.pdf</a>.</li><br/>
+                    <li>Julesz, B. and Bergen, J. (1983). "Textons, The Fundamental Elements in Preattentive Vision and Perception of Textures". Bell System Technical Journal 62 (6), 1619-1645. <a href="https://ia802708.us.archive.org/10/items/bstj62-6-1619/bstj62-6-1619_text.pdf">https://ia802708.us.archive.org/10/items/bstj62-6-1619/bstj62-6-1619_text.pdf</a>.</li><br/>
+                    <li>Krose, B. (1987). "Local Structure Analyzers as Determinants of Preattentive Pattern Discrimination". Biological Cybernetics 55 (5), 289-298. <a href="https://doi.org/10.1007/BF02281975">https://doi.org/10.1007/BF02281975</a>.</li><br/>
+                    <li>Malik, J. and Perona, P. (1990). "Preattentive Texture Discrimination with Early Vision Mechanisms". Journal of the Optical Society of America A 7 (5), 923-932. <a href="https://authors.library.caltech.edu/2653/1/MALjosaa90.pdf">https://authors.library.caltech.edu/2653/1/MALjosaa90.pdf</a>.</li><br/>
+                    <li>Robinson, H. (2019). "Good Plot Symbols by Default". Journal of Computational and Graphical Statistics, 28, (4), 1011-1016. <a href="https://doi.org/10.1080/10618600.2019.1637746">https://doi.org/10.1080/10618600.2019.1637746</a>.</li><br/>
+                    <li>Treisman, A. (1985). "Preattentive Processing in Vision". Computer Vision, Graphics, and Image Processing, 31, (2), 156-177. <a href="https://doi.org/10.1016/S0734-189X(85)80004-9">https://doi.org/10.1016/S0734-189X(85)80004-9</a>.</li><br/>
+                    <li>Triesman, A. and Gormican, S. (1988). "Feature analysis in early vision: Evidence from search asymmetries". Psychological Review 95 (1), 15-48. <a href="http://www2.psychology.uiowa.edu/faculty/hollingworth/prosem/Treisman_Gormican_88_PR_FeatureAnalysisIn.pdf">http://www2.psychology.uiowa.edu/faculty/hollingworth/prosem/Treisman_Gormican_88_PR_FeatureAnalysisIn.pdf</a>.</li><br/>
+                    <li>Wolfe, J. and Friedman-Hill, S. (1992). "Visual Search for Oriented Lines: The role of angular relations between targets and distractors". Spatial Vision 76 (3), 199-207. <a href="https://doi.org/10.1163/156856892X00082">https://doi.org/10.1163/156856892X00082</a>.</li><br/>
                 </ul>
             </div>
             <a href="https://github.com/hemanrobinson/preattentive/">Code Shared on GitHub</a>
