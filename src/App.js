@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Slider, Select, MenuItem } from '@material-ui/core';
+import { Slider, Select, MenuItem } from '@mui/material';
 import Plot from './Plot';
 import './App.css';
 import treisman from './treisman.png';
