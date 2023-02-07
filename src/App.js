@@ -61,14 +61,14 @@ const App = () => {
                 This is <a href="https://nationalmedals.org/laureate/anne-treisman/">Anne Treisman</a>, receiving the National Science Award. At the end of a great career, you want a big hunk of metal, and she got hers.
                 </p>
                 <p className="center">
-                    <a href="https://nationalmedals.org/laureate/anne-treisman/"><img alt="Dr. Anne Treisman" src={treisman} /></a>
+                    <a href="https://nationalmedals.org/laureate/anne-treisman/"><img title="Dr. Anne Treisman" alt="Dr. Anne Treisman" src={treisman} /></a>
                     <br />
                 </p>
                 <p>
                 Dr. Treisman and other cognitive psychologists studied figures like the one below.
                 </p>
                 <p className="center">
-                    <img alt="Test" src={test} />
+                    <img title="Preattentive and Non-preattentive Symbols" alt="Preattentive and Non-preattentive Symbols" src={test} />
                 </p>
                 <p>
                 They wondered: why do most people perceive the asterisks, on the right, more quickly than the down-pointing triangles, on the left?  All three figures are composed of the same three lines, at the same angles.
@@ -80,7 +80,7 @@ const App = () => {
                 The preattentive literature has many contributors, including (Beck, Prazdny, and Rosenfeld, 1983), (Healey, Booth, and Enns, 1996), (Julesz and Bergen, 1983), (Krose, 1987), (Malik and Perona, 1990), (Triesman and Gormican, 1988) (Wolfe and Friedman-Hill, 1992).  Dr. Christopher Healey provides a detailed <a href="https://www.csc2.ncsu.edu/faculty/healey/PP/index.html">bibliography with examples</a> (Healey and Enns, 2012).
                 </p>
                 <p className="center">
-                    <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709"><img alt="Dr. William Cleveland" src={cleveland} /></a>
+                    <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709"><img title="Dr. William Cleveland" alt="Dr. William Cleveland" src={cleveland} /></a>
                     <br />
                 </p>
                 <p>
@@ -90,7 +90,7 @@ const App = () => {
                 <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Jacques Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Leland Wilkinson</a> suggested the Circle, Plus, and X symbols.  The Circle is considered the best symbol when data have only one category, because it minimizes overlap.
                 </p>
                 <p className="center">
-                    <img alt="Discriminable Symbols" src={symbolsDiscriminable} />
+                    <img title="Discriminable Symbols" alt="Discriminable Symbols" src={symbolsDiscriminable} />
                 </p>
                 <p>
                 The most discriminable symbols are not the most popular.  Of the symbols above, the circle, plus, and X are used frequently; the others only rarely.
@@ -111,7 +111,7 @@ const App = () => {
                 These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>:
                 </p>
                 <p className="center">
-                    <img alt="Preattentive Symbols" src={symbolsPreattentive} />
+                    <img title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
                 </p>
                 <br/>
                 <h2>References</h2>
