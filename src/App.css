@@ -3,6 +3,9 @@ div {
     text-align: center;
     gap: 10px;
 }
+h2 {
+    padding-top: 10px;
+}
 img {
     border: 1px solid #939ba1;
 }

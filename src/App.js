@@ -113,7 +113,6 @@ const App = () => {
                 <p className="center">
                     <img title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
                 </p>
-                <br/>
                 <h2>Further Reading</h2>
                 <ul>
                     <li>Beck, J., Prazdny, K., and Rosenfeld, A. (1983). "A Theory of Textural Segmentation". In Human and Machine Vision, eds. J. Beck, B. Hope, A. Rosenfeld, NY: Academic Press, 1-38. <a href="https://doi.org/10.1016/B978-0-12-084320-6.50007-4">https://doi.org/10.1016/B978-0-12-084320-6.50007-4</a>.</li><br/>
