@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/preattentive/static/css/main.12f45155.css",
-    "main.js": "/preattentive/static/js/main.562ea6e7.js",
+    "main.css": "/preattentive/static/css/main.1564a1f2.css",
+    "main.js": "/preattentive/static/js/main.8ad37307.js",
     "static/media/treisman.png": "/preattentive/static/media/treisman.cc518c778adc3b25998b.png",
     "static/media/cleveland.png": "/preattentive/static/media/cleveland.934d3552dd61dea416d1.png",
     "static/media/test.png": "/preattentive/static/media/test.b69dab220b0b79f3a9b5.png",
     "static/media/symbolsDiscriminable.png": "/preattentive/static/media/symbolsDiscriminable.8f1cf55aacb306739402.png",
+    "static/media/github.svg": "/preattentive/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
     "index.html": "/preattentive/index.html",
-    "main.12f45155.css.map": "/preattentive/static/css/main.12f45155.css.map",
-    "main.562ea6e7.js.map": "/preattentive/static/js/main.562ea6e7.js.map"
+    "main.1564a1f2.css.map": "/preattentive/static/css/main.1564a1f2.css.map",
+    "main.8ad37307.js.map": "/preattentive/static/js/main.8ad37307.js.map"
   },
   "entrypoints": [
-    "static/css/main.12f45155.css",
-    "static/js/main.562ea6e7.js"
+    "static/css/main.1564a1f2.css",
+    "static/js/main.8ad37307.js"
   ]
 }
