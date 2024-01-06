@@ -9,6 +9,10 @@ h2 {
 img {
     border: 1px solid #939ba1;
 }
+img.icon {
+    border: 0;
+    height: 24px;
+}
 p.center {
     text-align: center;
 }

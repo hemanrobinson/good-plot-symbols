@@ -5,6 +5,7 @@ import './App.css';
 import treisman from './treisman.png';
 import cleveland from './cleveland.png';
 import test from './test.png';
+import github from './github.svg';
 import symbolsPreattentive from './symbolsPreattentive.png';
 import symbolsDiscriminable from './symbolsDiscriminable.png';
 
@@ -21,7 +22,7 @@ const App = () => {
     return (
         <div className="Column">
             <div className="Description">
-                <h1>Preattentive Plotting</h1>
+                <h1>Preattentive Plotting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/hemanrobinson/preattentive/"><img className="icon" title="Code Shared on GitHub" alt="Code Shared on GitHub" src={github}/></a></h1>
                 <p>
                 Plot symbols with preattentive features improve our ability to detect patterns in data.  Use the controls below to explore symbols for plotting.
                 </p>
@@ -127,7 +128,6 @@ const App = () => {
                     <li>Wolfe, J. and Friedman-Hill, S. (1992). "Visual Search for Oriented Lines: The role of angular relations between targets and distractors". Spatial Vision 76 (3), 199-207. <a href="https://doi.org/10.1163/156856892X00082">https://doi.org/10.1163/156856892X00082</a>.</li><br/>
                 </ul>
             </div>
-            <a href="https://github.com/hemanrobinson/preattentive/">Code Shared on GitHub</a>
         </div>
     );
 }
