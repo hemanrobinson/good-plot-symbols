@@ -57,7 +57,7 @@ const App = () => {
                 </Select>
             </div>
             <div className="Description">
-                <h2>Usability</h2>
+                <h2>User Interface</h2>
                 <p>
                 This is <a href="https://nationalmedals.org/laureate/anne-treisman/">Anne Treisman</a>, receiving the National Science Award. At the end of a great career, you want a big hunk of metal, and she got hers.
                 </p>
