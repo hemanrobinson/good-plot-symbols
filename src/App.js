@@ -9,7 +9,7 @@ import github from './github.svg';
 import symbolsPreattentive from './symbolsPreattentive.png';
 import symbolsDiscriminable from './symbolsDiscriminable.png';
 
-// Application:  Preattentive Plotting
+// Application:  Good Plot Symbols
 const App = () => {
     
     // Create state.
@@ -22,7 +22,7 @@ const App = () => {
     return (
         <div className="Column">
             <div className="Description">
-                <h1>Preattentive Plotting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/hemanrobinson/preattentive/"><img className="icon" title="Code Shared on GitHub" alt="Code Shared on GitHub" src={github}/></a></h1>
+                <h1>Good Plot Symbols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/hemanrobinson/good-plot-symbols/"><img className="icon" title="Code Shared on GitHub" alt="Code Shared on GitHub" src={github}/></a></h1>
                 <p>
                 Plot symbols with preattentive features improve our ability to detect patterns in data.  Use the controls below to explore symbols for plotting.
                 </p>
@@ -103,10 +103,7 @@ const App = () => {
                 The study found statistically significant differences in perception times for up to six symbols.
                 </p>
                 <p>
-                As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
-                </p>
-                <p>
-                The symbols are equally weighted by pixel count, so that no category biases the plot.
+                As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on. The symbols are equally weighted by pixel count, so that no category biases the plot.
                 </p>
                 <p className="center">
                     <img title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
@@ -116,7 +113,7 @@ const App = () => {
                 This project uses <a href="https://react.dev">React</a>, <a href="https://github.com/mui-org/material-ui">Material-UI</a>, and <a href="https://github.com/d3/d3">d3</a>.
                 </p>
                 <p>
-                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>:
+                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>, which now supports both filled and stroked symbols. When there are few categories and little overlap, filled symbols emphasize the data. When there are many categories or significant overlap, stroked symbols with preattentive features help users detect patterns in their data.
                 </p>
                 <h2>Further Reading</h2>
                 <ul>

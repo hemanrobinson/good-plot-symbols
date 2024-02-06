@@ -31,16 +31,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		F80AD3F62587B82D00A59892 /* preattentive */ = {
+		F80AD3F62587B82D00A59892 /* good-plot-symbols */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "$(ACTION)";
-			buildConfigurationList = F80AD3F92587B82D00A59892 /* Build configuration list for PBXLegacyTarget "preattentive" */;
+			buildConfigurationList = F80AD3F92587B82D00A59892 /* Build configuration list for PBXLegacyTarget "good-plot-symbols" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
 			dependencies = (
 			);
-			name = preattentive;
+			name = "good-plot-symbols";
 			passBuildSettingsInEnvironment = 1;
 			productName = preattentive;
 		};
@@ -57,7 +57,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F80AD3F52587B82D00A59892 /* Build configuration list for PBXProject "preattentive" */;
+			buildConfigurationList = F80AD3F52587B82D00A59892 /* Build configuration list for PBXProject "good-plot-symbols" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -69,7 +69,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F80AD3F62587B82D00A59892 /* preattentive */,
+				F80AD3F62587B82D00A59892 /* good-plot-symbols */,
 			);
 		};
 /* End PBXProject section */
@@ -210,7 +210,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F80AD3F52587B82D00A59892 /* Build configuration list for PBXProject "preattentive" */ = {
+		F80AD3F52587B82D00A59892 /* Build configuration list for PBXProject "good-plot-symbols" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F80AD3F72587B82D00A59892 /* Debug */,
@@ -219,7 +219,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F80AD3F92587B82D00A59892 /* Build configuration list for PBXLegacyTarget "preattentive" */ = {
+		F80AD3F92587B82D00A59892 /* Build configuration list for PBXLegacyTarget "good-plot-symbols" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F80AD3FA2587B82D00A59892 /* Debug */,

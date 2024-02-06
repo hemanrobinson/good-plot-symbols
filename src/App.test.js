@@ -24,7 +24,7 @@ it( "renders App with childnodes", () => {
     // Test structure.
     const div = container.querySelector( "div" );
     expect( div.className ).toBe( "Column" );
-    expect( div.childNodes.length ).toBe( 5 );
+    expect( div.childNodes.length ).toBe( 4 );
     expect( div.childNodes[ 0 ].className ).toBe( "Description" );
     expect( div.childNodes[ 1 ].className ).toBe( "GridPlots" );
     expect( div.childNodes[ 2 ].className ).toBe( "GridControls" );

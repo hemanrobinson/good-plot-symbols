@@ -1,8 +1,8 @@
 {
-  "name": "preattentive",
+  "name": "good-plot-symbols",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://hemanrobinson.github.io/preattentive",
+  "homepage": "https://hemanrobinson.github.io/good-plot-symbols",
   "dependencies": {
     "@babel/core": "^7.20.12",
     "@emotion/react": "^11.10.5",
