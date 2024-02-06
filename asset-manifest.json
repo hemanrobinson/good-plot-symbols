@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/preattentive/static/css/main.1564a1f2.css",
-    "main.js": "/preattentive/static/js/main.c73105d9.js",
-    "static/media/treisman.png": "/preattentive/static/media/treisman.cc518c778adc3b25998b.png",
-    "static/media/cleveland.png": "/preattentive/static/media/cleveland.934d3552dd61dea416d1.png",
-    "static/media/test.png": "/preattentive/static/media/test.b69dab220b0b79f3a9b5.png",
-    "static/media/symbolsDiscriminable.png": "/preattentive/static/media/symbolsDiscriminable.8f1cf55aacb306739402.png",
-    "static/media/github.svg": "/preattentive/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
-    "index.html": "/preattentive/index.html",
-    "main.1564a1f2.css.map": "/preattentive/static/css/main.1564a1f2.css.map",
-    "main.c73105d9.js.map": "/preattentive/static/js/main.c73105d9.js.map"
+    "main.css": "/good-plot-symbols/static/css/main.1564a1f2.css",
+    "main.js": "/good-plot-symbols/static/js/main.82c87a85.js",
+    "static/media/treisman.png": "/good-plot-symbols/static/media/treisman.cc518c778adc3b25998b.png",
+    "static/media/cleveland.png": "/good-plot-symbols/static/media/cleveland.934d3552dd61dea416d1.png",
+    "static/media/test.png": "/good-plot-symbols/static/media/test.b69dab220b0b79f3a9b5.png",
+    "static/media/symbolsDiscriminable.png": "/good-plot-symbols/static/media/symbolsDiscriminable.8f1cf55aacb306739402.png",
+    "static/media/github.svg": "/good-plot-symbols/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
+    "index.html": "/good-plot-symbols/index.html",
+    "main.1564a1f2.css.map": "/good-plot-symbols/static/css/main.1564a1f2.css.map",
+    "main.82c87a85.js.map": "/good-plot-symbols/static/js/main.82c87a85.js.map"
   },
   "entrypoints": [
     "static/css/main.1564a1f2.css",
-    "static/js/main.c73105d9.js"
+    "static/js/main.82c87a85.js"
   ]
 }
