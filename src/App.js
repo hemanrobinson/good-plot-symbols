@@ -108,11 +108,15 @@ const App = () => {
                 <p>
                 The symbols are equally weighted by pixel count, so that no category biases the plot.
                 </p>
-                <p>
-                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>:
-                </p>
                 <p className="center">
                     <img title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
+                </p>
+                <h2>Implementation</h2>
+                <p>
+                This project uses <a href="https://react.dev">React</a>, <a href="https://github.com/mui-org/material-ui">Material-UI</a>, and <a href="https://github.com/d3/d3">d3</a>.
+                </p>
+                <p>
+                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>:
                 </p>
                 <h2>Further Reading</h2>
                 <ul>

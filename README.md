@@ -8,4 +8,4 @@ Symbols with preattentive features improve pattern detection in plots by increas
 
 [![Preattentive Symbols](src/symbolsPreattentive.png)](https://hemanrobinson.github.io/preattentive/)
 
-This project uses [d3](https://github.com/d3/d3) and [Material-UI](https://github.com/mui-org/material-ui), and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project uses [React](https://react.dev), [Material-UI](https://github.com/mui-org/material-ui), and [d3](https://github.com/d3/d3).
