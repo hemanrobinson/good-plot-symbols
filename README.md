@@ -6,4 +6,4 @@ Symbols with preattentive features improve pattern detection in plots by increas
 
 [This project demonstrates plot symbols with preattentive features that improve usability.](https://hemanrobinson.github.io/good-plot-symbols/)
 
-[![Preattentive Symbols](src/symbolsPreattentive.png)](https://hemanrobinson.github.io/good-plot-symbols/)
+[![Good Plot Symbols](public/good-plot-symbols-small.png)](https://hemanrobinson.github.io/good-plot-symbols/)

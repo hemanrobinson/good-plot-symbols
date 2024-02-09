@@ -103,7 +103,10 @@ const App = () => {
                 The study found statistically significant differences in perception times for up to six symbols.
                 </p>
                 <p>
-                As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on. The symbols are equally weighted by pixel count, so that no category biases the plot.
+                The symbols are equally weighted by pixel count, so that no category biases the plot.
+                </p>
+                <p>
+                As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
                 </p>
                 <p className="center">
                     <img title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
