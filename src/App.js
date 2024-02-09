@@ -116,7 +116,7 @@ const App = () => {
                 This project uses <a href="https://react.dev">React</a>, <a href="https://github.com/mui-org/material-ui">Material-UI</a>, and <a href="https://github.com/d3/d3">d3</a>.
                 </p>
                 <p>
-                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>, which now supports both filled and stroked symbols. When there are few categories and little overlap, filled symbols emphasize the data. When there are many categories or significant overlap, stroked symbols with preattentive features help users detect patterns in their data.
+                These symbols have been <a href="https://github.com/d3/d3-shape/releases">contributed to d3</a>, which now supports both filled and stroked symbols (<a href="https://d3js.org/d3-shape/symbol#symbolsFill">d3.symbolsFill</a> and <a href="https://d3js.org/d3-shape/symbol#symbolsStroke">d3.symbolsStroke</a>). When there are few categories and little overlap, filled symbols emphasize the data. When there are many categories or significant overlap, stroked symbols with preattentive features help users detect patterns in their data.
                 </p>
                 <h2>Further Reading</h2>
                 <ul>
