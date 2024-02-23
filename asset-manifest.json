@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/good-plot-symbols/static/css/main.1564a1f2.css",
-    "main.js": "/good-plot-symbols/static/js/main.cd469a5d.js",
+    "main.css": "/good-plot-symbols/static/css/main.820cf1e5.css",
+    "main.js": "/good-plot-symbols/static/js/main.b762c27c.js",
     "static/media/treisman.png": "/good-plot-symbols/static/media/treisman.cc518c778adc3b25998b.png",
     "static/media/cleveland.png": "/good-plot-symbols/static/media/cleveland.934d3552dd61dea416d1.png",
     "static/media/test.png": "/good-plot-symbols/static/media/test.b69dab220b0b79f3a9b5.png",
@@ -9,11 +9,11 @@
     "static/media/symbolsPreattentive.png": "/good-plot-symbols/static/media/symbolsPreattentive.931cea6353ee1bb48eb9.png",
     "static/media/github.svg": "/good-plot-symbols/static/media/github.6fa18895f6e6c7772cab7049f7e05f59.svg",
     "index.html": "/good-plot-symbols/index.html",
-    "main.1564a1f2.css.map": "/good-plot-symbols/static/css/main.1564a1f2.css.map",
-    "main.cd469a5d.js.map": "/good-plot-symbols/static/js/main.cd469a5d.js.map"
+    "main.820cf1e5.css.map": "/good-plot-symbols/static/css/main.820cf1e5.css.map",
+    "main.b762c27c.js.map": "/good-plot-symbols/static/js/main.b762c27c.js.map"
   },
   "entrypoints": [
-    "static/css/main.1564a1f2.css",
-    "static/js/main.cd469a5d.js"
+    "static/css/main.820cf1e5.css",
+    "static/js/main.b762c27c.js"
   ]
 }
