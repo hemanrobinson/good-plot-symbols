@@ -47,7 +47,7 @@ const App = () => {
                     valueLabelDisplay="auto"
                     onChangeCommitted={( event, value ) => setLineWidth( value )} />
                 <label>Data Set:</label>
-                <Select value={ dataSet } style={{minWidth: 150, backgroundColor: "#ffffff"}}
+                <Select variant="standard" value={ dataSet } style={{minWidth: 200, backgroundColor: "#ffffff"}}
                     onChange={( event ) => { setDataSet( event.target.value )}}>
                     <MenuItem value="Decathlon">(50) Decathlon</MenuItem>
                     <MenuItem value="Business">(67) Business</MenuItem>

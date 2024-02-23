@@ -34,7 +34,7 @@ p.center {
 }
 .GridControls {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 200px;
     align-items: center;
     justify-items: right;
     justify-content: center;
