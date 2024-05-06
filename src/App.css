@@ -7,6 +7,9 @@ h2 {
     padding-top: 10px;
 }
 img {
+    border: 1px solid;
+}
+img.border {
     border: 1px solid #939ba1;
 }
 img.icon {

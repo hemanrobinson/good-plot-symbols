@@ -69,7 +69,7 @@ const App = () => {
                 Dr. Treisman and other cognitive psychologists studied figures like the one below.
                 </p>
                 <p className="center">
-                    <img title="Preattentive and Non-preattentive Symbols" alt="Preattentive and Non-preattentive Symbols" src={test} />
+                    <img className="border" title="Preattentive and Non-preattentive Symbols" alt="Preattentive and Non-preattentive Symbols" src={test} />
                 </p>
                 <p>
                 They wondered: why do most people perceive the asterisks, on the right, more quickly than the down-pointing triangles, on the left?  All three figures are composed of the same three lines, at the same angles.
@@ -80,18 +80,18 @@ const App = () => {
                 <p>
                 The preattentive literature has many contributors, including (Beck, Prazdny, and Rosenfeld, 1983), (Healey, Booth, and Enns, 1996), (Julesz and Bergen, 1983), (Krose, 1987), (Malik and Perona, 1990), (Triesman and Gormican, 1988) (Wolfe and Friedman-Hill, 1992).  Dr. Christopher Healey provides a detailed <a href="https://www.csc2.ncsu.edu/faculty/healey/PP/index.html">bibliography with examples</a> (Healey and Enns, 2012).
                 </p>
+                <p>
+                Statisticians have long been interested in plot symbols. <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709">William Cleveland</a> used the work of the psychologists to improve pattern detection in plots.  At the top of this page, the scatter plot on the right extends Dr. Cleveland's work.
+                </p>
                 <p className="center">
                     <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709"><img title="Dr. William Cleveland" alt="Dr. William Cleveland" src={cleveland} /></a>
                     <br />
                 </p>
                 <p>
-                Statisticians, of course, have long been interested in plot symbols. <a href="https://www.cerias.purdue.edu/site/people/faculty/view/709">William Cleveland</a> used the work of the psychologists to improve pattern detection in plots.  At the top of this page, the scatter plot on the right extends Dr. Cleveland's work.
-                </p>
-                <p>
                 <a href="https://en.wikipedia.org/wiki/Jacques_Bertin">Jacques Bertin</a>, <a href="https://en.wikipedia.org/wiki/William_S._Cleveland">Cleveland</a>, and <a href="https://en.wikipedia.org/wiki/Leland_Wilkinson">Leland Wilkinson</a> suggested the Circle, Plus, and X symbols.  The Circle is considered the best symbol when data have only one category, because it minimizes overlap.
                 </p>
                 <p className="center">
-                    <img title="Discriminable Symbols" alt="Discriminable Symbols" src={symbolsDiscriminable} />
+                    <img className="border" title="Discriminable Symbols" alt="Discriminable Symbols" src={symbolsDiscriminable} />
                 </p>
                 <p>
                 The most discriminable symbols are not the most popular.  Of the symbols above, the circle, plus, and X are used frequently; the others only rarely.
@@ -109,7 +109,7 @@ const App = () => {
                 As in baseball, the best symbols are at the top of the order. Ordering the symbols enables software to automatically assign the two best symbols for two categories, the three best for three categories, and so on.
                 </p>
                 <p className="center">
-                    <img title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
+                    <img className="border" title="Preattentive Symbols" alt="Preattentive Symbols" src={symbolsPreattentive} />
                 </p>
                 <h2>Implementation</h2>
                 <p>
